@@ -8,7 +8,7 @@ The morning, I present [[http://soctrace-inria.github.io/ocelotl/][Ocelotl]] and
 Slides are present
 [[file:slides/dosimont_bsc2014.pdf][here]].
 The principle is to provide overviews of large traces (we reach 30 GB and 3 billion events)
-by using both data and visual aggregation to render a easily interpretable representation
+by using both data and visual aggregation to render an easily interpretable representation
 of the application behavior.
 Data aggregation is based on information theory concepts like Shannon entropy and
 Kullback Leibler divergence. User provide a parameter which helps to determine a
