@@ -28,21 +28,24 @@ During the presentation, I present mainly two cases:
 
 [[images/ts_record.png]]
 
-- A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes). This is a very interesting case to show what we gain by using the spatiotemporal overview instead of
-the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during all the computation phase, while the temporal view is only able to show a temporal perturbation 
+In the image above, we can see the temporal overview provided by Ocelotl. It is a stacked bar chart, representing the quantity of time passed in each different type of states for each temporal aggregate. These events are shown using different colors. Hovering the visualization enables to get more details. Spatial dimension (the resources) is aggregated *after* the partitionning. On the bottom right, information curves (green: complexity gain, red: information gain) helps to find aggregations that are relevant. We are also working on detecting automatically the best aggregation by using the shapes of these curves.
+
+- A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes). This is a very interesting case to show what we gain by using the spatiotemporal overview instead of the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during all the computation phase, while the temporal view is only able to show a temporal perturbation 
 that occurs on another cluster.
 
 [[images/lu_t.png]]
 
 [[images/lu_st.png]]
 
+The first image shows the temporal overview, the second the spatiotemporal overview. In this last one, the time is the x axis, and the resources are on the y axis. These resources are organized as a hierarchy that is not explicitely shown (and has to be deduced by the aggregation pattern). We plan to add an explicit representation of this y axis. Colors represent here the mode, i.e. the most present state
+in the aggregate. We also use alpha (transparency) to vary the color intensity, as a function of the amplitude of time duration. Darker is the color, higher is the amplitude of the state represented by the mode.
 
 The night, we discuss with Arnaud about the possibility to convert Pajé traces (more precisely, pjdump
 traces, which are Pajé traces processed by [[https://github.com/schnorr/pajeng][pj_dump]] in order to rebuild
 some events like the states and the links) to Paraver format, which is the format used by the Paraver tool. 
 There is some similarities between both formats (same kind of concepts about the event semantics) and a
 Perl script will be perfect to perform the conversion.
-While Arnaud modify the script he already wrote to include some aspects that were not taking into account,
+While Arnaud modify the script he already wrote to include some aspects that were not taken into account,
 I develop a wrapper to pipeline this script with the pjdump importer already present in Framesoc.
 By the way, [[http://generoso.github.io/framesoc/][Framesoc]] is the trace and tool management infrastructure 
 whose Ocelotl is a plug-in.
@@ -61,7 +64,7 @@ Augustin gives me a Pajé trace (SMPI BigDFT, 40 threads) that we will be use as
 with Paraver trace of the same application.
 I let Arnaud explain the details.
 
-In this trace, we easily spot that one thread has a behavior different from the others.
+In this trace, we easily spot that one MPI process has a behavior different from the others.
 It is also visible (but less easily) in the Framesoc's Gantt chart.
 
 [[images/smpi_bigdft_40_ocelotl.png]]
@@ -78,7 +81,7 @@ trace using the documentation. We will not have converted the big Paraver trace 
 because of some issues on the network...
 
 We also want to convert a Pajé trace into Paraver, and in particular the big 12 GB and 700 processes Nancy LU trace.
-The objective is to give this trace to Juan and see how he can manage its analysis with this size.
+The objective is to give this trace to Juan and Harald and see how they would analyze a trace of such size.
 Arnaud succeed in writing a script, despite some errors that don't provide the right state names.
 
 ** Day 3
@@ -88,9 +91,9 @@ Here is an example of what I get.
 
 [[images/paraver_bigdft_unbalanced.png]]
 
-This is a pretty good result, because with Paraver, it is impossible
-to open the full trace and it has to be cut and filtered before. In my case, I take advantage
-of the database and the fact that readen events are not all stored in the memory.
+This is a pretty good result, because it seems cumbersome to open the full trace that barely fits in RAM.
+It has to be cut and filtered before if I understood well. In my case, I take advantage
+of the database and the fact that the readen events are not all stored in the memory.
 The importing and indexing times are a bit long (a dozen of minute), but this step
 is just necessary once, because the data base is kept for the further analysis sessions.
 Ocelotl read and print a result in few minutes.
@@ -100,10 +103,12 @@ We also show the result of a small paraver trace of 19 MB
 [[images/paraver_bigdft_mpitrace.png]]
 
 However, for both cases, there is some issues that hinder us when we try to analyze these traces:
-in particular, states have wrong names and we cannot related them to the right function call.
+in particular, states have wrong names and we cannot relate them to the right function call.
 
-The afternoon, I provide the 12GB LU 700 processes Pajé trace to Juan. However, it is too big and he can not
-open the full trace with Paraver. I succeed in opening a very small part, but the analysis is complicated
-because the conversion is not perfect and we don't keep the default ID of the states. Because of that,
-Paraver fails in recognizing them.
+The afternoon, I provide the 12GB LU 700 processes Pajé trace to Juan and Harald. 
+Harald succeed in opening it, however, the conversion was not correct: a MPI state
+was mapped on the state with the ID 0, which corresponds to the Idle state, according
+to the convention used by Paraver.
+We should reconvert this trace properly by correcting the perl script.
+We hope meet the Barcelonians again in one month. We will provide them the corrected trace.
 
