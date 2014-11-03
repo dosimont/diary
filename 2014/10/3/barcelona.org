@@ -1,0 +1,573 @@
+Here's a summary of the different activities I did with Arnaud and Co. during three days in Barcelona
+
+* Day 1
+
+The morning, I present [[http://soctrace-inria.github.io/ocelotl/][Ocelotl]] and the aggregation techniques that are implemented.
+Slides are present
+[[file:slides/dosimont_bsc2014][here]].
+The principle is to provide overviews of large traces (we reach 30 GB and 3 billion events)
+by using both data and visual aggregation to render a easily interpretable representation
+of the application behavior.
+Data aggregation is based on information theory concepts like Shannon entropy and
+Kullback Leibler divergence. User provide a parameter which helps to determine a
+partition of the system. This partition aggregates in priority the parts of the representation
+where the behavior is homogeneous. This behavior can be described through statistics
+like the duration of states (functions) that occur during the application execution,
+the number of events, the average value of a variable...
+To give meaning to the aggregation, it is essential to structure the trace and constrain
+the aggregation.
+This structure helps to find which can be responsible of the observed behavior :
+for instance, in the case of a spatiotemporal aggregation, the hierarchical structure of 
+the hardware components can highlight behaviors that can be explained by the difference between
+the machines (computing capabilities, memory, I/O, network, etc.).
+
+During the presentation, I present mainly two cases:
+- A multimedia application that shows the capabilities of the temporal overview by highlighting
+easily pertubations due to an overloaded buffer.
+This is the main use-case of the SoC-Trace project, within Ocelotl is developed.
+[[file:images/ts_record.png][here]].
+- A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes).
+This is a very interesting case to show what we gain by using the spatiotemporal overview instead of
+the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during
+all the computation phase, while the temporal view is only able to show a temporal perturbation 
+that occurs on another cluster.
+[[file:images/lu_t.png][here]].
+[[file:images/lu_st.png][here]].
+
+
+The night, we discuss with Arnaud about the possibility to convert Pajé traces (more precisely, pjdump
+traces, which are Pajé traces processed by [[https://github.com/schnorr/pajeng][pj_dump]] in order to rebuild
+some events like the states and the links) to Paraver format, which is the format used by the Paraver tool. 
+There is some similarities between both formats (same kind of concepts about the event semantics) and a
+Perl script will be perfect to perform the conversion.
+While Arnaud modify the script he already wrote to include some aspects that were not taking into account,
+I develop a wrapper to pipeline this script with the pjdump importer already present in Framesoc.
+By the way, [[http://generoso.github.io/framesoc/][Framesoc]] is the trace and tool management infrastructure 
+whose Ocelotl is a plug-in.
+This infrastructure stores traces as data base, which is efficient to read them quickly and perform
+some filtering or complex queries. Framesoc also contains a Gantt chart and some statistic visualizations.
+
+* Day 2
+
+I also apply the same principle to import Pajé traces to Framesoc.
+Thanks to Lucas who have added a way to compile pjdump in a static way, I can integrate
+it into a Pajé importer linked to the pjdump importer. It's not the most efficient technique,
+but it enables to import easily Pajé trace without having to convert them in pjdump format first.
+For Paraver, there is some problems with the hierarchy that does not fit well. However,
+I succeed in importing a trace, despite some errors.
+Augustin gives me a Pajé trace (BigDFT) that will be use as a comparison.
+I let Arnaud explain what is exaclty the application ;-)
+
+In this trace, we easily spot that one thread has a behavior different from the others.
+It is also visible (but less easily) in the Framesoc's Gantt chart.
+
+I also get a big Paraver trace from the Barcelonians (16 GB). A problem: I don't have enough
+room on my disk and I have to upload it on a distant server to process it.
+
+The night, we work very late with Arnaud : we first solve the problem of the nodes hierarchy
+and the thread associated with them. We have to understand in details the header of the Paraver
+trace using the documentation. We will not have converted the big Paraver trace when I will go to sleep,
+because of some issues on the network...
+
+We also want to convert a Pajé trace into Paraver, and in particular the big 12 GB and 700 processes Nancy LU trace.
+The objective is to give this trace to Juan and see how he can manage its analysis with this size.
+Arnaud succeed in writing a script, despite some errors that don't provide the right state names.
+
+* Day 3
+
+After correcting some bugs the morning, I succeed in opening the big Paraver Trace.
+Here is an example of what I get. This is a pretty good result, because with Paraver, it is impossible
+to open the full trace and it has to be cut and filtered before. In my case, I take advantage
+of the database and the fact that readen events are not all stored in the memory.
+The importing and indexing times are a bit long (a dozen of minute), but this step
+is just necessary once, because the data base is kept for the further analysis sessions.
+Ocelotl read and print a result in few minutes.
+
+The afternoon, I provide the 12GB Pajé trace to Juan. However, it is too big and he can not
+open it completely. I succeed in opening a very small part, but the analysis is complicated
+because the conversion is not perfect and we don't keep the default ID of the states. because of that,
+Paraver fail in recognizing them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A year and a half ago, I needed to write [[file:../../..//2013/04/03/paraver_converter.org][paraver converter]] because in
+a particular setup I could not trace BigDFT neither with TAU not
+Scalasca. My goal was simply to compute statistics on the trace
+using R. Today, we're in Barcelona and we're discussing on whether
+SMPI could be used as an alternative to Dimemas within the paraver
+framework. To this end, we need to make sure that SMPI can simulate
+paraver traces and output paraver traces. Ideally, we would modify
+SMPI to that it can parse and generate such traces but it's probably
+more work than what we can achieve in two days so we'll go for 
+simple trace conversions, i.e., a paraver to SMPI time-independent trace
+format conversion and a Paje to paraver conversion.
+
+Let's start from the traces I used at that time.
+#+begin_src sh :results output :exports both
+cp -r ../../../2013/04/03/paraver_trace ./
+ls paraver_trace/
+#+end_src
+
+#+RESULTS:
+: EXTRAE_Paraver_trace_mpich.pcf
+: EXTRAE_Paraver_trace_mpich.prv
+: EXTRAE_Paraver_trace_mpich.row
+
+* Paraver Conversion
+  Juan Gonzalez provided us a description of the Paraver and Dimemas
+  format. The Paraver description is available [[http://www.bsc.es/media/1370.pdf][here]], i.e., from the
+  [[http://www.bsc.es/computer-sciences/performance-tools/documentation][Paraver documentation]]. Remember the =pcf= file describes events, the
+  =row= file defines the cpu/node/thread mapping and the =prv= is the
+  trace with all events. I reworked my old script to convert from
+  paraver to csv, pjdump and SMPI time-independant trace format during
+  the night. Unfortunately, on the morning, Juan explained me I should
+  not trust the state records but only the the event and communication
+  records. Ideally, I should have worked from the dimemas trace
+  instead of the paraver trace to obtain SMPI trace but at least, this
+  allowed me to get a converter to csv/pjdump, which is very useful to
+  Damien for framesoc/ocelotl. So I struggled to make it work.
+
+#+name: paraver_converter
+#+header: :var input="./paraver_trace/EXTRAE_Paraver_trace_mpich" 
+#+header: :var output="./paraver_trace/bigdft_8_rl" 
+#+header: :var format="pjdump"
+#+BEGIN_SRC perl :results output :tangle yes :tangle ./paraver_converter.pl
+  use strict;
+  use Data::Dumper;
+
+  my $power_reference=286.087E-3; # in flop/mus
+
+  sub main {
+      # default values for $input, $output and $format may have be
+      # defined when tangling from babel but command line arguments
+      # should always override them.
+      my($arg);
+
+      while(defined($arg=shift(@ARGV))) {
+          for ($arg) {
+              if (/^-i$/) { $input = shift(@ARGV); last; }
+              if (/^-o$/) { $output = shift(@ARGV); last; }
+              if (/^-f$/) { $format = shift(@ARGV); last; }
+              print "unrecognized argument '$arg'";
+          }
+      }
+
+      if(!defined($input) || $input eq "") { die "No valid input file provided.\n"; }
+      if(!defined($output) || $output eq "") { die "No valid input file provided.\n"; }
+      
+      print "Input: '$input'\n";
+      print "Output: '$output'\n";
+      print "Format: '$format'\n";
+
+      my($state_name,$event_name) = parse_pcf($input.".pcf");
+      my($resource_name) = parse_row($input.".row");
+      convert_prv($input.".prv",$state_name,$event_name,$resource_name,$output,$format);
+  }
+
+  sub parse_row {
+      my($row) = shift;
+      my $line;
+      my(%resource_name);
+
+      open(INPUT,$row) or die "Cannot open $row. $!";
+      while(defined($line=<INPUT>)) {
+          chomp $line;
+          if($line =~ /^LEVEL (.*) SIZE/) {
+              my $type = $1;
+              $resource_name{$type}= [];
+              while((defined($line=<INPUT>)) &&
+                    !($line =~ /^\s*$/g)) {
+                  chomp $line;
+                  push @{$resource_name{$type}}, $line;
+              }
+          }
+      }
+
+      return (\%resource_name);
+  }
+
+  sub parse_pcf {
+      my($pcf) = shift;
+      my $line;
+      my(%state_name, %event_name) ;
+      open(INPUT,$pcf) or die "Cannot open $pcf. $!";
+      while(defined($line=<INPUT>)) {
+          chomp $line;
+          if($line =~ /^STATES$/) {
+              while((defined($line=<INPUT>)) &&
+                    ($line =~ /^(\d+)\s+(.*)/g)) {
+                  $state_name{$1} = $2;
+              }
+          }
+          if($line =~ /^EVENT_TYPE$/) {
+              while($line=<INPUT>) {
+                  if($line =~ /VALUES/g) {last;}
+                  $line =~ /[6|9]\s+(\d+)\s+(.*)/g or next; #E.g. , EVENT_TYPE\n 1    50100001    Send Size in MPI Global OP
+                  my($id)=$1;
+                  $event_name{$id}{type} = $2;
+              }
+              while((defined($line=<INPUT>)) &&
+                    ($line =~ /^(\d+)\s+(.*)/g)) {
+                  my($id);
+                  foreach $id (keys %event_name) {
+                      $event_name{$id}{value}{$1} = $2;
+                  }
+              }
+          }
+      }
+      # print Dumper(\%state_name);
+      # print Dumper(\%event_name);
+      return (\%state_name,\%event_name);
+  }
+
+  my(%pcf_coll_arg) = (
+      "send" => "50100001",
+      "recv" => "50100002",
+      "root" => "50100003",
+      "communicator" => "50100003",
+      "compute" => "my_reduce_compute_amount",
+  );
+
+  my(%tit_translate) = (
+      "Running" => "compute",
+      "Not created" => "", # skip me
+      "I/O" => "",         # skip me
+      "Synchronization" => "", # skip me
+      "MPI_Comm_size" => "",   # skip me
+      "MPI_Comm_rank" => "",   # skip me
+      "Outside MPI" => "",     # skip me
+      "End" => "",             # skip me
+      "MPI_Init" => "init",
+      "MPI_Bcast" => "bcast",
+      "MPI_Allreduce" => "allReduce",
+      "MPI_Alltoallv" => "allToAllV",
+      "MPI_Alltoall" => "allToAll",
+      "MPI_Reduce" => "reduce",
+      "MPI_Allgatherv" => "", # allGatherV Uggly hack :)
+      "MPI_Gather" => "gather",
+      "MPI_Gatherv" => "gatherV",
+      "MPI_Reduce_scatter" => "reduceScatter",
+      "MPI_Finalize" => "finalize",
+      "MPI_Barrier" => "barrier",
+   );
+
+  sub convert_prv {
+      my($prv,$state_name,$event_name,$resource_name,$output,$format) = @_;
+      my $line;
+      my (%event);
+      my(@fh)=();
+
+      open(INPUT,$prv) or die "Failed to open $prv:$!\n";
+
+
+      # Start parsing the header to get the trace hierarchy. 
+      # We should get something like
+      # #Paraver (dd/mm/yy at hh:m):ftime:0:nAppl:applicationList[:applicationList]
+
+      $line=<INPUT>; chomp $line;
+      $line=~/^\#Paraver / or die "Invalid header '$line'\n";
+      my $header=$line;
+      $header =~ s/^[^:\(]*\([^\)]*\):// or die "Invalid header '$line'\n";
+      $header =~ s/(\d+):(\d+)([^\(])/$1\_$2$3/g;
+      $header =~ s/,\d+$//g;
+      my ($max_duration,$resource,$nb_app,@appl) = split(/:/,$header);
+      $max_duration =~ s/_.*$//g;
+      $resource =~ /^(.*)\((.*)\)$/ or die "Invalid resource description '$resource'\n";
+      my($nb_nodes,$cpu_list)= ($1,$2);
+
+      $nb_app==1 or die "I can handle only one application type at the moment\n";
+
+      my @cpu_list=split(/,/,$cpu_list);
+
+      print("$max_duration --> '$nb_nodes' '@cpu_list'    $nb_app  @appl \n");
+      my(%Appl);
+      my($nb_task);
+      foreach my $app (1..$nb_app) {
+          my($task_list);
+          $appl[$app-1] =~ /^(.*)\((.*)\)$/ or die "Invalid resource description '$resource'\n";
+          ($nb_task,$task_list) = ($1,$2);
+          print $appl[$app-1]."\n";
+          print "\t '$nb_task' '$task_list'\n";
+
+          my(@task_list) = split(/,/,$task_list);
+
+
+          my(%mapping);
+          my($task);
+          foreach $task (1..$nb_task) {
+              my($nb_thread,$node_id) = split(/_/,$task_list[$task-1]);
+              if(!defined($mapping{$node_id})) { $mapping{$node_id}=[]; }
+              push @{$mapping{$node_id}},[$task,$nb_thread];
+          }
+          $Appl{$app}{nb_task}=$nb_task;
+          $Appl{$app}{mapping}=\%mapping;
+      }
+
+      print(Dumper(%Appl));
+      for ($format) {
+          if (/^csv$/) { 
+              $output .= ".csv";
+              open(OUTPUT,"> $output") or die "Cannot open $output. $!"; 
+              last; 
+          } 
+          if (/^pjdump$/) { 
+              $output .= ".pjdump";
+              open(OUTPUT,"> $output"); 
+              my @tab = split(/:/,`tail -n 1 $prv`);
+              print OUTPUT "Container, 0, 0, 0.0, $max_duration, $max_duration, 0\n";
+              foreach my $node (1..$nb_nodes) {
+                  print OUTPUT "Container, 0, N, 0.0, $max_duration, $max_duration, node_$node\n";
+              }
+              foreach my $app (values(%Appl)) {
+                  print Dumper($app);
+                  
+                  foreach my $node (keys%{$$app{mapping}}) {
+                      print "$node\n";
+                      foreach my $t (@{$$app{mapping}{$node}}) {
+                          print OUTPUT "Container, node_$node, P, 0.0, $max_duration, $max_duration, MPI_Rank_$$t[0]\n";
+                          foreach my $thread (1..$$t[1]) {
+                              print OUTPUT "Container, MPI_Rank_$$t[0], T, 0.0, $max_duration, $max_duration, Thread_$$t[0]_$thread\n";
+                          }
+                      }
+                  }
+              }
+              last;
+          }
+          if(/^tit$/) {
+              my $nb_proc = 0;
+              foreach my $node (@{$$resource_name{NODE}}) { 
+                  my $filename = $output."_$nb_proc.tit";
+                  open($fh[$nb_proc], "> $filename") or die "Cannot open > $filename: $!";
+                  $nb_proc++;
+              }
+              last;
+          }
+          die "Invalid format '$format'\n";
+      }
+      
+
+      # Now, let's process the records 
+
+      while(defined($line=<INPUT>)) {
+          chomp($line);
+          # State records 1:cpu:appl:task:thread : begin_time:end_time : state
+          if($line =~ /^1/) {
+              my($sname);
+              my($sname_param);
+              my($record,$cpu,$appli,$task,$thread,$begin_time,$end_time,$state) =
+                  split(/:/,$line);
+              if($$state_name{$state} =~ /Group/ || $$state_name{$state} =~ /Others/ ) {
+                  $line=<INPUT>;
+                  chomp $line;
+                  my($event,$ecpu,$eappli,$etask,$ethread,$etime,%event_list) =
+                      split(/:/,$line);
+                  (($event==2) && ($ecpu eq $cpu) && ($eappli eq $appli) && 
+                   ($etask eq $task) && ($ethread eq $thread) &&
+                   ($etime >= $begin_time) && ($etime <= $end_time)) or
+                   die "Invalid event!";
+
+                  if($$state_name{$state} =~ /Group/) {
+                      $sname = $$event_name{50000002}{value}{$event_list{50000002}};
+                      my $t;
+                      if($tit_translate{$sname} =~ /V$/) { # Really Uggly hack because of "poor" tracing of V operations
+                          print "WTF!!!! $line \n";
+                          $event_list{$pcf_coll_arg{"send"}} = 100000;
+                          $event_list{$pcf_coll_arg{"recv"}} = 100000;
+                          $tit_translate{$sname} =~ s/V$//;
+                      }
+
+                      if($tit_translate{$sname} eq "reduce") { # Uggly hack because the amount of computation is not given
+                          $event_list{$pcf_coll_arg{"compute"}} = 1;
+                      }
+                      if($tit_translate{$sname} eq "gather") { # Uggly hack because the amount of receive does not make sense here
+                          $event_list{$pcf_coll_arg{"recv"}} = $event_list{$pcf_coll_arg{"send"}};
+                          $event_list{$pcf_coll_arg{"root"}} = 1; # Uggly hack. AAAAARGH
+                      }
+                      if($tit_translate{$sname} eq "reduceScatter") { # Uggly hack because of "poor" tracing
+                          $event_list{$pcf_coll_arg{"recv"}} = $event_list{$pcf_coll_arg{"send"}}; 
+                          my $foo=$event_list{$pcf_coll_arg{"recv"}};
+                          $event_list{$pcf_coll_arg{"recv"}}="";
+                          for (1..$nb_task) { $event_list{$pcf_coll_arg{"recv"}} .= $foo." "; }
+                          $event_list{$pcf_coll_arg{"compute"}} = 1;
+                      }
+
+                      foreach $t ("send","recv", "compute", "root") {
+                          if(defined($event_list{$pcf_coll_arg{$t}}) &&
+                             $event_list{$pcf_coll_arg{$t}} ne "0") {
+                              if($t eq "root") { $event_list{$pcf_coll_arg{$t}}--; }
+                              $sname_param.= "$event_list{$pcf_coll_arg{$t}} ";
+                          }
+                      }
+                  } else {
+                      $sname = $$event_name{50000003}{value}{$event_list{50000003}};
+                  }
+              } else {
+                  $sname = $$state_name{$state};
+              }
+
+              if($sname eq "Running") { $sname_param.= (($end_time-$begin_time)*$power_reference); }
+
+              if($format eq "csv") {
+                  print OUTPUT "State, $task, MPI_STATE, $begin_time, $end_time, ".
+                      ($end_time-$begin_time).", 0, ".
+                      $sname."\n";
+              } 
+              if($format eq "pjdump") {
+                  print OUTPUT "State, Thread_${task}_$thread, STATE, $begin_time, $end_time, ".
+                      ($end_time-$begin_time).", 0, ".
+                      $sname."\n";
+              }
+              if($format eq "tit") {
+                  $task=$task-1;                  
+                  defined($tit_translate{$sname}) or die "Unknown state '$sname' for tit\n";
+                  if($tit_translate{$sname} ne "") {
+                      print { $fh[$task] } "$task $tit_translate{$sname} $sname_param\n",
+                  }
+              }
+          } elsif ($line =~ /^2/) {
+            # Event records 2:cpu:appl:task:thread : time : event_type:event_value
+            my($event,$cpu,$appli,$task,$thread,$time,%event_list) =
+                    split(/:/,$line);
+            my($sname);
+            my($sname_param);
+
+            if(defined($event_list{50000002})) { # collective operation
+                $sname = $$event_name{50000002}{value}{$event_list{50000002}};
+                my $t;
+                foreach $t ("send","recv","root") {
+                    if(defined($event_list{$pcf_coll_arg{$t}}) &&
+                       $event_list{$pcf_coll_arg{$t}} ne "0") {
+                        if($t eq "root") { $event_list{$pcf_coll_arg{$t}}--; }
+                        $sname_param.= "$event_list{$pcf_coll_arg{$t}} ";
+                    }
+                }
+            } elsif(defined($event_list{50000003})) { # MPI other
+                $sname = $$event_name{50000003}{value}{$event_list{50000003}};
+            } else { # This is application of trace flushing event
+                     # and hardware counter, user function, ...
+                my($warn)=1;
+                for (40000018,40000003,40000001,
+                     42009999,42001003,42001010,42001015,300,
+                     70000001,70000002,70000003,80000001,80000002,80000003, 
+                     45000000) {
+                  if(defined($event_list{$_})) {$warn=0; last;}
+                }
+                if($warn) { print "Skipping event $line\n"; }
+                next;
+            }
+
+            if($format eq "tit") {
+                $task=$task-1;                  
+                defined($tit_translate{$sname}) or die "Unknown state '$sname' for tit:\n\t$line\n";
+                if($tit_translate{$sname} ne "") {
+                    print { $fh[$task] } "$task $tit_translate{$sname} $sname_param\n",
+                }
+            }
+          } elsif($line =~ /^3/) { 
+              # Communication records 3: cpu_send:ptask_send:task_send:thread_send : logical_time_send: actual_time_send: cpu_recv:ptask_recv:task_recv:thread_recv : logical_time_recv: actual_time_recv: size: tag
+              print STDERR "Skipping this communication event\n";
+          }
+          if($line =~ /^c/) {
+              # Communicator record c: app_id: communicator_id: number_of_process : thread_list (e.g., 1:2:3:4:5:6:7:8)
+              print STDERR "Skipping communicator definition\n";
+          }
+      }
+
+      for ($format) {
+          if (/^csv$/) { 
+              close(OUTPUT); print "Generated [[file:$output]]\n";
+              last; 
+          }
+          if (/^pjdump$/) { 
+              close(OUTPUT); print "Generated [[file:$output]]\n";
+              last; 
+          }
+          if(/^tit$/) {
+              foreach my $f (@fh) {
+                  close($f) or die "Failed closing file descriptor. $!\n";
+              }
+              print "Generated [[file:${output}_0.tit]] among other ones\n";
+              last;
+          }
+          die "Invalid format '$format'\n";
+      }
+  }
+
+  main();
+#+END_SRC
+
+#+RESULTS: paraver_converter
+: Input: './paraver_trace/EXTRAE_Paraver_trace_mpich'
+: Output: './paraver_trace/bigdft_8_rl'
+: Format: 'tit'
+: 6081433364 --> '8' '1 1 1 1 1 1 1 1'    1  8(1_1,1_2,1_3,1_4,1_5,1_6,1_7,1_8) 
+: WTF!!!! 2:2:1:2:1:98398558:50000002:12:50100001:1546368:50100002:24:50100004:1:70000001:6828841:80000001:6828841:70000002:4887377:80000002:4887377:70000003:4334263:80000003:4334263 
+: WTF!!!! 2:2:1:2:1:993690611:50000002:14:50100001:16:50100002:0:50100004:1:70000001:6526121:80000001:6526121:70000002:4906529:80000002:4906529:70000003:4645058:80000003:4645058 
+: Generated [[file:./paraver_trace/bigdft_8_rl_0.tit]] among other ones
+
+#+begin_src sh :results output :exports both
+head paraver_trace/bigdft_8_rl.csv
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+State, 1, MPI_STATE, 0, 10668, 10668, 0, Not created
+State, 2, MPI_STATE, 0, 5118733, 5118733, 0, Not created
+State, 3, MPI_STATE, 0, 9374527, 9374527, 0, Not created
+State, 4, MPI_STATE, 0, 17510142, 17510142, 0, Not created
+State, 5, MPI_STATE, 0, 5989994, 5989994, 0, Not created
+State, 6, MPI_STATE, 0, 5737601, 5737601, 0, Not created
+State, 7, MPI_STATE, 0, 5866978, 5866978, 0, Not created
+State, 8, MPI_STATE, 0, 5891099, 5891099, 0, Not created
+State, 1, MPI_STATE, 10668, 25576057, 25565389, 0, Running
+State, 2, MPI_STATE, 5118733, 18655258, 13536525, 0, Running
+#+end_example
+
+* Let's try to replay on SMPI
+
+#+begin_src sh :results output :exports both
+cp /home/alegrand/Work/SimGrid/infra-songs/WP4/SC13/graphene.xml ./graphene.xml
+#+end_src
+
+#+RESULTS:
+
+#+header: :var input="./paraver_trace/bigdft_8_rl"
+#+begin_src sh :results output :exports both :tangle yes :tangle run.sh
+  export REPLAY=/home/alegrand/Work/SimGrid/simgrid-git/examples/smpi/smpi_replay
+  export SMPIRUN=/home/alegrand/Work/SimGrid/simgrid-git/smpi_script/bin/smpirun
+  export MACHINE=./graphene.xml
+
+  rm -f machine_file;
+  touch machine_file;
+  for i in `seq 1 144`; do echo graphene-${i}.nancy.grid5000.fr >> machine_file ; done
+
+  export NP=`cat /tmp/smpi_replay.txt | wc -l`
+
+  ls $input*.tit > /tmp/smpi_replay.txt
+
+  $SMPIRUN -ext smpi_replay --log=replay.thresh:critical --log=smpi_replay.thresh:verbose \
+           --cfg=smpi/cpu_threshold:-1  -hostfile machine_file -platform $MACHINE \
+           -np $NP gdb\ --args\ $REPLAY /tmp/smpi_replay.txt  --log=smpi_kernel.thres:warning \
+           --cfg=contexts/factory:thread
+#+end_src
+
+#+RESULTS:
+
