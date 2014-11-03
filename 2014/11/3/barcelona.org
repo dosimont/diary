@@ -6,7 +6,7 @@ Here's a summary of the different activities I did with Arnaud and Co. during th
 
 The morning, I present [[http://soctrace-inria.github.io/ocelotl/][Ocelotl]] and the aggregation techniques that are implemented.
 Slides are present
-[[file:slides/dosimont_bsc2014][here]].
+[[file:slides/dosimont_bsc2014.pdf][here]].
 The principle is to provide overviews of large traces (we reach 30 GB and 3 billion events)
 by using both data and visual aggregation to render a easily interpretable representation
 of the application behavior.
