@@ -24,16 +24,17 @@ the hardware components can highlight behaviors that can be explained by the dif
 the machines (computing capabilities, memory, I/O, network, etc.).
 
 During the presentation, I present mainly two cases:
-- A multimedia application that shows the capabilities of the temporal overview by highlighting easily pertubations due to an overloaded buffer.
-This is the main use-case of the SoC-Trace project, within Ocelotl is developed.
-[[images/ts_record.png]].
-- A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes).
-This is a very interesting case to show what we gain by using the spatiotemporal overview instead of
-the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during
-all the computation phase, while the temporal view is only able to show a temporal perturbation 
+- A multimedia application that shows the capabilities of the temporal overview by highlighting easily pertubations due to an overloaded buffer. This is the main use-case of the SoC-Trace project, within Ocelotl is developed.
+
+[[images/ts_record.png]]
+
+- A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes). This is a very interesting case to show what we gain by using the spatiotemporal overview instead of
+the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during all the computation phase, while the temporal view is only able to show a temporal perturbation 
 that occurs on another cluster.
-[[images/lu_t.png]].
-[[images/lu_st.png]].
+
+[[images/lu_t.png]]
+
+[[images/lu_st.png]]
 
 
 The night, we discuss with Arnaud about the possibility to convert Pajé traces (more precisely, pjdump
@@ -56,11 +57,16 @@ it into a Pajé importer linked to the pjdump importer. It's not the most effici
 but it enables to import easily Pajé trace without having to convert them in pjdump format first.
 For Paraver, there is some problems with the hierarchy that does not fit well. However,
 I succeed in importing a trace, despite some errors.
-Augustin gives me a Pajé trace (BigDFT) that will be use as a comparison.
-I let Arnaud explain what is exaclty the application ;-)
+Augustin gives me a Pajé trace (SMPI BigDFT, 40 threads) that we will be use as a comparison
+with Paraver trace of the same application.
+I let Arnaud explain the details.
 
 In this trace, we easily spot that one thread has a behavior different from the others.
 It is also visible (but less easily) in the Framesoc's Gantt chart.
+
+[[images/smpi_bigdft_40_ocelotl.png]]
+[[images/smpi_bigdft_40_framesoc.png]]
+
 
 I also get a big Paraver trace from the Barcelonians (16 GB). A problem: I don't have enough
 room on my disk and I have to upload it on a distant server to process it.
@@ -77,7 +83,11 @@ Arnaud succeed in writing a script, despite some errors that don't provide the r
 ** Day 3
 
 After correcting some bugs the morning, I succeed in opening the big Paraver Trace.
-Here is an example of what I get. This is a pretty good result, because with Paraver, it is impossible
+Here is an example of what I get. 
+
+[[images/paraver_bigdftmpi.png]]
+
+This is a pretty good result, because with Paraver, it is impossible
 to open the full trace and it has to be cut and filtered before. In my case, I take advantage
 of the database and the fact that readen events are not all stored in the memory.
 The importing and indexing times are a bit long (a dozen of minute), but this step
