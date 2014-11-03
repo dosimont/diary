@@ -95,7 +95,7 @@ It has to be cut and filtered before if I understood well. In my case, I take ad
 of the database and the fact that the readen events are not all stored in the memory.
 The importing and indexing times are a bit long (a dozen of minute), but this step
 is just necessary once, because the data base is kept for the further analysis sessions.
-Ocelotl read and print a result in few minutes.
+Ocelotl reads and prints a result in few minutes.
 
 We also show the result of a small paraver trace of 19 MB
 
