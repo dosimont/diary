@@ -37,7 +37,7 @@ In the image above, we can see the temporal overview provided by Ocelotl. It is 
 [[images/lu_st.png]]
 
 The first image shows the temporal overview, the second the spatiotemporal overview. In this last one, the time is the x axis, and the resources are on the y axis. These resources are organized as a hierarchy that is not explicitely shown (and has to be deduced by the aggregation pattern). We plan to add an explicit representation of this y axis. Colors represent here the mode, i.e. the most present state
-in the aggregate. We also use alpha (transparency) to vary the color intensity, as a function of the amplitude of time duration. Darker is the color, higher is the amplitude of the state represented by the mode.
+in the aggregate. We also use alpha (transparency) to vary the color intensity, which is a function of the time duration amplitude. Diagonal bars represent visual aggregates, i.e. part of the trace that are spatially not aggregated according the aggregation algorithm, but that are too small to be represented correctly separately. Simple diagonals (falling from left to right) indicates that all the nodes that are visually aggregated share the same temporal pattern. Thicker diagonals (rising from left to right) indicates that visually aggregated nodes do not share their temporal pattern. We are thinking about improving these textures to distinguish both aggregation types better.
 
 The night, we discuss with Arnaud about the possibility to convert Pajé traces (more precisely, pjdump
 traces, which are Pajé traces processed by [[https://github.com/schnorr/pajeng][pj_dump]] in order to rebuild
