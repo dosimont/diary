@@ -109,5 +109,5 @@ Harald succeed in opening it, however, the conversion was not correct: a MPI sta
 was mapped on the state with the ID 0, which corresponds to the Idle state, according
 to the convention used by Paraver.
 We should reconvert this trace properly by correcting the perl script.
-We hope meet the Barcelonians again in one month. We will provide them the corrected trace.
+We hope meet the Barcelonians again in one month and this time, we will provide them the corrected trace.
 
