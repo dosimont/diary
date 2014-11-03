@@ -90,7 +90,7 @@ Here is an example of what I get.
 
 [[images/paraver_bigdft_unbalanced.png]]
 
-This is a pretty good result, because it seems cumbersome to open the full trace that barely fits in RAM.
+This is a pretty good result, because with Paraver, it seems cumbersome to open the full trace that barely fits in RAM.
 It has to be cut and filtered before if I understood well. In my case, I take advantage
 of the database and the fact that the readen events are not all stored in the memory.
 The importing and indexing times are a bit long (a dozen of minute), but this step
