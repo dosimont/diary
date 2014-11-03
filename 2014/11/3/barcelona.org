@@ -44,7 +44,7 @@ traces, which are Pajé traces processed by [[https://github.com/schnorr/pajeng]
 some events like the states and the links) to Paraver format, which is the format used by the Paraver tool. 
 There is some similarities between both formats (same kind of concepts about the event semantics) and a
 Perl script will be perfect to perform the conversion.
-While Arnaud modify the script he already wrote to include some aspects that were not taken into account,
+While Arnaud modifies the script he already wrote to include some aspects that were not taken into account,
 I develop a wrapper to pipeline this script with the pjdump importer already present in Framesoc.
 By the way, [[http://generoso.github.io/framesoc/][Framesoc]] is the trace and tool management infrastructure 
 whose Ocelotl is a plug-in.
