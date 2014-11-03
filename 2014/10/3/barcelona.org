@@ -1,6 +1,8 @@
-Here's a summary of the different activities I did with Arnaud and Co. during three days in Barcelona
+* Barcelona : visiting the BSC
 
-* Day 1
+Here's a summary of the different activities I did with Arnaud and Co. during three days in Barcelona (2014/10/29-31)
+
+** Day 1
 
 The morning, I present [[http://soctrace-inria.github.io/ocelotl/][Ocelotl]] and the aggregation techniques that are implemented.
 Slides are present
@@ -22,17 +24,16 @@ the hardware components can highlight behaviors that can be explained by the dif
 the machines (computing capabilities, memory, I/O, network, etc.).
 
 During the presentation, I present mainly two cases:
-- A multimedia application that shows the capabilities of the temporal overview by highlighting
-easily pertubations due to an overloaded buffer.
+- A multimedia application that shows the capabilities of the temporal overview by highlighting easily pertubations due to an overloaded buffer.
 This is the main use-case of the SoC-Trace project, within Ocelotl is developed.
-[[file:images/ts_record.png][here]].
+[[images/ts_record.png]].
 - A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes).
 This is a very interesting case to show what we gain by using the spatiotemporal overview instead of
 the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during
 all the computation phase, while the temporal view is only able to show a temporal perturbation 
 that occurs on another cluster.
-[[file:images/lu_t.png][here]].
-[[file:images/lu_st.png][here]].
+[[images/lu_t.png]].
+[[images/lu_st.png]].
 
 
 The night, we discuss with Arnaud about the possibility to convert Pajé traces (more precisely, pjdump
@@ -47,7 +48,7 @@ whose Ocelotl is a plug-in.
 This infrastructure stores traces as data base, which is efficient to read them quickly and perform
 some filtering or complex queries. Framesoc also contains a Gantt chart and some statistic visualizations.
 
-* Day 2
+** Day 2
 
 I also apply the same principle to import Pajé traces to Framesoc.
 Thanks to Lucas who have added a way to compile pjdump in a static way, I can integrate
@@ -73,7 +74,7 @@ We also want to convert a Pajé trace into Paraver, and in particular the big 12
 The objective is to give this trace to Juan and see how he can manage its analysis with this size.
 Arnaud succeed in writing a script, despite some errors that don't provide the right state names.
 
-* Day 3
+** Day 3
 
 After correcting some bugs the morning, I succeed in opening the big Paraver Trace.
 Here is an example of what I get. This is a pretty good result, because with Paraver, it is impossible
