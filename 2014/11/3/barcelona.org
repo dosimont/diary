@@ -30,8 +30,7 @@ During the presentation, I present mainly two cases:
 
 In the image above, we can see the temporal overview provided by Ocelotl. It is a stacked bar chart, representing the quantity of time passed in each different type of states for each temporal aggregate. These events are shown using different colors. Hovering the visualization enables to get more details. Spatial dimension (the resources) is aggregated *after* the partitionning. On the bottom right, information curves (green: complexity gain, red: information gain) helps to find aggregations that are relevant. We are also working on detecting automatically the best aggregation by using the shapes of these curves.
 
-- A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes). This is a very interesting case to show what we gain by using the spatiotemporal overview instead of the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during all the computation phase, while the temporal view is only able to show a temporal perturbation 
-that occurs on another cluster.
+- A MPI application LU, executed on 700 processes (3 clusters, almost 100 multicore nodes). This is a very interesting case to show what we gain by using the spatiotemporal overview instead of the temporal one: we are indeed able to detect that a cluster behaves heterogeneously during all the computation phase, while the temporal view is only able to show a temporal perturbation that occurs on another cluster.
 
 [[images/lu_t.png]]
 
