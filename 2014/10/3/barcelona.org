@@ -65,6 +65,7 @@ In this trace, we easily spot that one thread has a behavior different from the 
 It is also visible (but less easily) in the Framesoc's Gantt chart.
 
 [[images/smpi_bigdft_40_ocelotl.png]]
+
 [[images/smpi_bigdft_40_framesoc.png]]
 
 
@@ -85,7 +86,7 @@ Arnaud succeed in writing a script, despite some errors that don't provide the r
 After correcting some bugs the morning, I succeed in opening the big Paraver Trace.
 Here is an example of what I get. 
 
-[[images/paraver_bigdftmpi.png]]
+[[images/paraver_bigdft_unbalanced.png]]
 
 This is a pretty good result, because with Paraver, it is impossible
 to open the full trace and it has to be cut and filtered before. In my case, I take advantage
@@ -94,10 +95,17 @@ The importing and indexing times are a bit long (a dozen of minute), but this st
 is just necessary once, because the data base is kept for the further analysis sessions.
 Ocelotl read and print a result in few minutes.
 
-The afternoon, I provide the 12GB Pajé trace to Juan. However, it is too big and he can not
-open it completely. I succeed in opening a very small part, but the analysis is complicated
-because the conversion is not perfect and we don't keep the default ID of the states. because of that,
-Paraver fail in recognizing them.
+We also show the result of a small paraver trace of 19 MB
+
+[[images/paraver_bigdft_mpitrace.png]]
+
+However, for both cases, there is some issues that hinder us when we try to analyze these traces:
+in particular, states have wrong names and we cannot related them to the right function call.
+
+The afternoon, I provide the 12GB LU 700 processes Pajé trace to Juan. However, it is too big and he can not
+open the full trace with Paraver. I succeed in opening a very small part, but the analysis is complicated
+because the conversion is not perfect and we don't keep the default ID of the states. Because of that,
+Paraver fails in recognizing them.
 
 
 
