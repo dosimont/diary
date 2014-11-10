@@ -1,11 +1,64 @@
 * List of Presentations
 
-Here's a list of presentations I did during my last year of Ph.D., and the way to download them.
+Here's a list of sources of papers and slides that can be downloaded. This list does not contain all my work.
 You need an account on [[https://gforge.inria.fr/][InriaForge]] and to be added to the Ocelotl Project.
 
 Replace [user] with your user name.
 
-** List
+** List of Papers
+
+- *AEP10 (published)*
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/aep-2014.git 
+#+end_src
+
+- *HPCS 2014 (published)*
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/hpcs-2014.git 
+#+end_src
+
+- *CLUSTER 2014 (published)*
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/cluster-2014.git 
+#+end_src
+
+- *VPA 2014 (rejected)*
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/vpa-2014.git 
+#+end_src
+
+
+- *IPTW'14 (accepted)*
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/iptw14.git 
+#+end_src
+
+- *CCGrid'15 (cancelled)*
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/ccgrid-2015.git 
+#+end_src
+
+** List of Reports
+
+- *Inria RR-8524*
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/RR-8524.git 
+#+end_src
+
+** Thesis
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/dosimont_thesis.git 
+#+end_src
+
+** List of Presentations
 
 - *SONGS T+24 meeting*, January 2014 (Nice)
 
