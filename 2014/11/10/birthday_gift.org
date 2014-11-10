@@ -1,6 +1,6 @@
-* List of Presentations
+* Sources
 
-Here's a list of sources of papers and slides that can be downloaded. This list does not contain all my work.
+Here's a list of repositories related to my work. This list is not exhaustive and contains mainly what I did during my 3rd year of PhD.
 You need an account on [[https://gforge.inria.fr/][InriaForge]] and to be added to the Ocelotl Project.
 
 Replace [user] with your user name.
