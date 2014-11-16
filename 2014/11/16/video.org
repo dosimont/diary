@@ -60,23 +60,14 @@ A. Parameters
 B. Steps
 
   1. Select the trace
-  
-  . Select a metric. Show the different possibilities.
-  
-  . Select an analysis type. Show how to select the event types and the producers.
-  
-  . Select stacked bar chart. Don't show the settings.
-  
-  . RUN. During the post process, we will reduce the loading time and show the most relevant parameter first.
-  
-  . Show different parameters, interact with the curves.
-
-  . Change TS to 200. Rerun. Also choose the best p.
-
-  . Select different areas and show stats
-  
-  . Zoom on a perturbation
-
-  . Switch to the Gantt chart and highlight the sys_write state.
+  2. Select a metric. Show the different possibilities.
+  3. Select an analysis type. Show how to select the event types and the producers.
+  4. Select stacked bar chart. Don't show the settings.
+  5. RUN. During the post process, we will reduce the loading time and show the most relevant parameter first.
+  6. Show different parameters, interact with the curves.
+  7. Change TS to 200. Rerun. Also choose the best p.
+  8. Select different areas and show stats
+  9. Zoom on a perturbation
+  10. Switch to the Gantt chart and highlight the sys_write state.
 
 
