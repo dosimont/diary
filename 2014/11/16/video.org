@@ -1,0 +1,82 @@
+* Videos
+
+Today, I am making several videos of Ocelotl tool and Framesoc infrastructure, destined to be shown at the SC14 Inria booth.
+They will also be available on Youtube.
+
+** Recording
+
+I am recording the screen (in Full HD, I'm taking advantage of the large TV provided by the hostel ;-) ) by using the recordmydesktop software.
+
+*** Start the recording
+
+#+begin_src sh
+recordmydesktop
+#+end_src
+
+*** Stop and convert to an .ogv file
+
+Press Ctrl+C
+
+*** Cancel
+
+Press Ctrl+C once more
+
+** Conversion to .avi format
+
+It is annoying to work with .ogv format, so I use this script to convert .ogv files to .avi.
+There is a dependancy with mencoder program, which has to be installed.
+
+#+begin_src sh
+#!/bin/bash
+# ogv to avi
+# Call this with multiple arguments
+# for example : ls *.{ogv,OGV} | xargs ogv2avi
+N=$#;
+echo "Converting $N files !"
+for ((i=0; i<=(N-1); i++))
+do
+echo "converting" $1
+filename=${1%.*}
+mencoder "$1" -ovc xvid -oac mp3lame -xvidencopts pass=1 -o $filename.avi
+shift 1
+done
+#+end_src
+
+** Contents
+
+I've planned several scenarios for the different videos.
+
+*** Ocelotl
+
+**** Example of a multimedia application : TSRecord
+
+A. Parameters
+
+  1. Trace: 
+    - tsrecord
+  2. Set: 
+    - normalize on
+
+B. Steps
+
+  1. Select the trace
+  
+  2. Select a metric. Show the different possibilities.
+  
+  3. Select an analysis type. Show how to select the event types and the producers.
+  
+  4. Select stacked bar chart. Don't show the settings.
+  
+  5. RUN. During the post process, we will reduce the loading time and show the most relevant parameter first.
+  
+  6. Show different parameters, interact with the curves.
+
+  7. Change TS to 200. Rerun. Also choose the best p.
+i
+  8. Select different areas and show stats
+  
+  9. Zoom on a perturbation
+
+  10. Switch to the Gantt chart and highlight the sys_write state.
+
+
