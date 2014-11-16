@@ -24,7 +24,7 @@ Press Ctrl+C once more
 ** Conversion to .avi format
 
 It is annoying to work with .ogv format, so I use this script to convert .ogv files to .avi.
-There is a dependancy with mencoder program, which has to be installed.
+There is a dependency with mencoder program, which has to be installed.
 
 #+begin_src sh
 #!/bin/bash
