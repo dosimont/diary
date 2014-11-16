@@ -70,4 +70,22 @@ B. Steps
   9. Zoom on a perturbation
   10. Switch to the Gantt chart and highlight the sys_write state.
 
+**** Example of a MPI application : Nancy LU 700 C
+
+A. Parameters
+
+  1. Trace: 
+    - nancy_700_lu.C.700
+  2. Set: 
+    - normalize off
+
+B. Steps
+
+  1. Select the trace
+  2. Select a metric. Show the different possibilities.
+  3. Select an analysis type. Show the hierarchy.
+  4. Select mode. Don't show the settings.
+  5. RUN. During the post process, we will reduce the loading time and show the most relevant parameter first.
+  6. Show different parameters, interact with the curves.
+  7. Compare with a temporal aggregation.
 
