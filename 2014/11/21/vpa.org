@@ -48,6 +48,7 @@ We should mind about a way to represent these kinds of topology, since it seems 
 
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a028.pdf][CommGram: A New Visual Analytics Tool for Large Communication Trace Data]]
 
+- A clustering technique representing communications over time. They use bipartite graph representations and B-spline curves to improve the readability.
 
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a036.pdf][Discovering Barriers to Efficient Execution, Both Obvious and Subtle, Using Instruction-Level Visualization]]
 
