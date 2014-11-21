@@ -1,16 +1,16 @@
 * VPA Workshop, SC'14
 
-Today, I'm attending to the [[1st VPA Workshop][http://cedmav.org/vpa2014.html]], at [[SC'14][http://conferences.computer.org/vpa/2014/]]
+Today, I'm attending to the [[http://cedmav.org/vpa2014.html][1st VPA Workshop]], at [[http://conferences.computer.org/vpa/2014/][SC'14]]
 
 *** Visualization of Performance Data for MPI Applications Using Circular Hierarchies
 
 Unfortunately, I missed the first presentation.
-The paper is available [[here][http://conferences.computer.org/vpa/2014/papers/7058a001.pdf]].
+The paper is available [[http://conferences.computer.org/vpa/2014/papers/7058a001.pdf][here]].
 It seems to be an interesting way to represent communications between nodes using a circular hierarchy. Looks a bit like ExtraVis.
 
 *** TorusVis?ND: Unraveling High-Dimensional Torus Networks for Network Traffic Visualizations
 
-The paper is available [[here]http://conferences.computer.org/vpa/2014/papers/7058a009.pdf]
+The paper is available [[http://conferences.computer.org/vpa/2014/papers/7058a009.pdf][here]]
 
 - TorusVis
 - Node representation and selection
@@ -24,4 +24,4 @@ The paper is available [[here]http://conferences.computer.org/vpa/2014/papers/70
 
 *** Down to Earth - How to Visualize Traffic on High-dimensional Torus Networks
 
-[[Paper][]]
+[[Paper]]
