@@ -2,15 +2,14 @@
 
 Today, I'm attending to the [[http://cedmav.org/vpa2014.html][1st VPA Workshop]], at [[http://conferences.computer.org/vpa/2014/][SC'14]]
 
-*** Visualization of Performance Data for MPI Applications Using Circular Hierarchies
+** Session 1
+
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a001.pdf][Visualization of Performance Data for MPI Applications Using Circular Hierarchies]]
 
 Unfortunately, I missed the first presentation.
-The paper is available [[http://conferences.computer.org/vpa/2014/papers/7058a001.pdf][here]].
 It seems to be an interesting way to represent communications between nodes using a circular hierarchy. Looks a bit like ExtraVis.
 
-*** TorusVis?ND: Unraveling High-Dimensional Torus Networks for Network Traffic Visualizations
-
-The paper is available [[http://conferences.computer.org/vpa/2014/papers/7058a009.pdf][here]]
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a009.pdf][TorusVis?ND: Unraveling High-Dimensional Torus Networks for Network Traffic Visualizations]]
 
 - TorusVis
 - Node representation and selection
@@ -22,6 +21,23 @@ The paper is available [[http://conferences.computer.org/vpa/2014/papers/7058a00
   - Multiresolution capabilities
   - Multiperspective?
 
-*** Down to Earth - How to Visualize Traffic on High-dimensional Torus Networks
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a017.pdf][Down to Earth - How to Visualize Traffic on High-dimensional Torus Networks]]
 
-[[Paper]]
+"Plane" approach. I didn't follow well.
+
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a024.pdf][Visualizing the Five-dimensional Torus Network of the IBM Blue Gene/Q]]
+
+** Session 2
+
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a028.pdf][CommGram: A New Visual Analytics Tool for Large Communication Trace Data]]
+
+
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a036.pdf][Discovering Barriers to Efficient Execution, Both Obvious and Subtle, Using Instruction-Level Visualization]]
+
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a042.pdf][Visualization of Memory Access Behavior on Hierarchical NUMA Architectures]]
+
+
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a050.pdf][Linking Performance Data into Scientific Visualization Tools]
+
+
+
