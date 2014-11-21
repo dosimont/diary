@@ -23,7 +23,7 @@ This gives me an idea: represent our aggregation using a circular representation
   - Multiresolution capabilities
   - Multiperspective?
 
-Circular representations seems to be the new buzz :;-)
+Circular representations seem to be the new buzz ;-)
 
 
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a017.pdf][Down to Earth - How to Visualize Traffic on High-dimensional Torus Networks]]
@@ -31,6 +31,11 @@ Circular representations seems to be the new buzz :;-)
 "Plane" approach. I didn't follow well.
 
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a024.pdf][Visualizing the Five-dimensional Torus Network of the IBM Blue Gene/Q]]
+
+- Main purpose: visualize 5D
+- Again focused on communications pattenrs.
+- Again, BlueGene is used as a use case.
+
 
 ** Session 2
 
