@@ -33,7 +33,7 @@ Circular representations seem to be the new buzz ;-)
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a024.pdf][Visualizing the Five-dimensional Torus Network of the IBM Blue Gene/Q]]
 
 - Main purpose: visualize 5D
-- Again focused on communications pattenrs.
+- Again focused on communications patterns.
 - Again, BlueGene is used as a use case.
 - Again, they focus on torus networks.
 
