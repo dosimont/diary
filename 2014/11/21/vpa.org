@@ -54,7 +54,7 @@ We should mind about a way to represent these kinds of topology, since it seems 
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a042.pdf][Visualization of Memory Access Behavior on Hierarchical NUMA Architectures]]
 
 
-*** [[http://conferences.computer.org/vpa/2014/papers/7058a050.pdf][Linking Performance Data into Scientific Visualization Tools]
+*** [[http://conferences.computer.org/vpa/2014/papers/7058a050.pdf][Linking Performance Data into Scientific Visualization Tools]]
 
 
 
