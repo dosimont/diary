@@ -1,7 +1,19 @@
 * VPA Workshop, SC'14
 
-Today, I'm attending to the 1st VPA Workshop at SC'14
+Today, I'm attending to the [1st VPA Workshop][http://cedmav.org/vpa2014.html]], at SC'14
 
-**  
+** Visualization of Performance Data for MPI Applications Using Circular Hierarchies
 
-**
+Unfortunately, I missed the first presentation
+
+** TorusVis?ND: Unraveling High-Dimensional Torus Networks for Network Traffic Visualizations
+
+- TorusVis
+- Node representation and selection
+- There is a time slice selection, same kind of principle than Triva
+- Shneiderman approach filled -> data exploration, from top to more details
+- Interaction: selection, filtering, brushing
+- Future work: 
+  - Scalability
+  - Multiresolution capabilities
+  - Multiperspective?
