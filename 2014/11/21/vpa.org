@@ -9,6 +9,8 @@ Today, I'm attending to the [[http://cedmav.org/vpa2014.html][1st VPA Workshop]]
 Unfortunately, I missed the first presentation.
 It seems to be an interesting way to represent communications between nodes using a circular hierarchy. Looks a bit like ExtraVis.
 
+This gives me an idea: represent our aggregation using a circular representation, where time is given by the distance to the central point, and the hierarchy represented as a "circular tree".
+
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a009.pdf][TorusVis?ND: Unraveling High-Dimensional Torus Networks for Network Traffic Visualizations]]
 
 - TorusVis
@@ -20,6 +22,9 @@ It seems to be an interesting way to represent communications between nodes usin
   - Scalability
   - Multiresolution capabilities
   - Multiperspective?
+
+Circular representations seems to be the new buzz :;-)
+
 
 *** [[http://conferences.computer.org/vpa/2014/papers/7058a017.pdf][Down to Earth - How to Visualize Traffic on High-dimensional Torus Networks]]
 
