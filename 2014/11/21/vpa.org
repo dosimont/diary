@@ -39,7 +39,9 @@ Circular representations seem to be the new buzz ;-)
 
 We should mind about a way to represent these kinds of topology, since it seems to be a current issue.
 
-- The guy show a 2D Projection of a 3D Torus, using a perspective technique.- Then it is transformed into another view, but I didn't understand well the"aggregation" process. This new representation is composed by imbricated rectangles. There is also a color gradient that this correspond to the spatial location of torus components.
+- The guy show a 2D Projection of a 3D Torus, using a perspective technique.
+
+- Then it is transformed into another view, but I didn't understand well the"aggregation" process. This new representation is composed by imbricated rectangles. There is also a color gradient that this correspond to the spatial location of torus components.
 
 
 ** Session 2
