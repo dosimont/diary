@@ -45,8 +45,11 @@ sudo yum install R
 
 #+begin_src sh
 sudo R
-> install.packages("ggplot2")
-> quit()
+#+end_src
+
+#+begin_src R
+install.packages("ggplot2")
+quit()
 #+end_src
 
 *** Python
