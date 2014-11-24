@@ -5,7 +5,9 @@ Today, I have to reinstall my whole system.
 ** RPM fusion
 
 #+begin_src sh
-sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
+sudo yum localinstall --nogpgcheck \
+http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm \
+http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
 #+end_src
 
 ** cpufreq
@@ -35,8 +37,8 @@ sudo yum install lttng-tools lttng-ust
 ** Copy wallpapers
 
 #+begin_src sh
-sudo cp ~/Images/wallpaper.jpg /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png &&\
-sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/wide/heisenbug.png &&\
+sudo cp ~/Images/wallpaper.jpg /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png \
+sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/wide/heisenbug.png \
 sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/standard/heisenbug.png
 #+end_src
 
@@ -55,5 +57,6 @@ sudo yum install fonts-* 'tex(eu1enc.def)' tex-dtk tex-xetex tex-xetex-def rpm-b
 cd /tmp &&\
 wget http://corefonts.sourceforge.net/msttcorefonts-2.5-1.spec &&\
 sudo rpmbuild -ba msttcorefonts-2.5-1.spec &&\
-sudo rpm -ivh /root/rpmbuild/RPMS/noarch/msttcorefonts-2.5-1.noarch.rpm
+sudo rpm -ivh /root/rpmbuild/RPMS/noarch/msttcorefonts-2.5-1.noarch.rpm &&\
+cd -
 #+end_src
