@@ -5,9 +5,7 @@ Today, I have to reinstall my whole system.
 ** RPM fusion
 
 #+begin_src sh
-sudo yum localinstall --nogpgcheck \\
-http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm\\
-http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
+sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
 #+end_src
 
 ** cpufreq
@@ -25,13 +23,7 @@ sudo yum install kmod-nvidia xorg-x11-drv-nvidia-libs
 ** Basic tools
 
 #+begin_src sh
-sudo yum install vim gvim\\
-svn git gitk\\
-gcc gcc-c++\\
-gnome-tweak-tool\\
-thunderbird\\
-kile\\
-libreoffice\\
+sudo yum install vim gvim svn git gitk gcc gcc-c++ gnome-tweak-tool thunderbird kile libreoffice
 #+end_src
 
 ** LTTng
@@ -43,10 +35,7 @@ sudo yum install lttng-tools lttng-ust
 ** Copy wallpapers
 
 #+begin_src sh
-sudo cp ~/Images/wallpaper.jpg\\
-/usr/share/backgrounds/beefy-miracle/default/normalish/beefy-miracle.png
-sudo cp /usr/share/backgrounds/beefy-miracle/default/normalish/beefy-miracle.png\\
-/usr/share/backgrounds/beefy-miracle/default/wide/beefy-miracle.png
-sudo cp /usr/share/backgrounds/beefy-miracle/default/normalish/beefy-miracle.png\\
-/usr/share/backgrounds/beefy-miracle/default/standard/beefy-miracle.png
+sudo cp ~/Images/wallpaper.jpg /usr/share/backgrounds/beefy-miracle/default/normalish/beefy-miracle.png
+sudo cp /usr/share/backgrounds/beefy-miracle/default/normalish/beefy-miracle.png /usr/share/backgrounds/beefy-miracle/default/wide/beefy-miracle.png
+sudo cp /usr/share/backgrounds/beefy-miracle/default/normalish/beefy-miracle.png /usr/share/backgrounds/beefy-miracle/default/standard/beefy-miracle.png
 #+end_src
