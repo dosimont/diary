@@ -25,6 +25,7 @@ sudo yum install kmod-nvidia xorg-x11-drv-nvidia-libs
 ** Basic tools
 
 #+begin_src sh
+sudo yum update vim-minimal \
 sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice
 #+end_src
 
@@ -33,10 +34,10 @@ sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice
 *** Common
 
 #+begin_src sh
-sudo yum install git gitk gcc gcc-c++ R make cmake
+sudo yum install git gitk gcc gcc-c++ make cmake
 #+end_src
 
-*** 
+*** R
 
 #+begin_src sh
 sudo yum install R
