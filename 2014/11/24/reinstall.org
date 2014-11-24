@@ -81,7 +81,7 @@ sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/sh
 
 ** LaTeX
 
-*** Intall Kile
+*** Install Kile
 
 #+begin_src sh
 sudo yum install kile
