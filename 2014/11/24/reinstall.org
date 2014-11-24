@@ -25,7 +25,21 @@ sudo yum install kmod-nvidia xorg-x11-drv-nvidia-libs
 ** Basic tools
 
 #+begin_src sh
-sudo yum install vim gvim svn git gitk gcc gcc-c++ gnome-tweak-tool thunderbird libreoffice
+sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice
+#+end_src
+
+** Programming stuffs
+
+*** Common
+
+#+begin_src sh
+sudo yum install git gitk gcc gcc-c++ R make cmake
+#+end_src
+
+*** 
+
+#+begin_src sh
+sudo yum install R
 #+end_src
 
 ** LTTng
@@ -59,4 +73,18 @@ wget http://corefonts.sourceforge.net/msttcorefonts-2.5-1.spec &&\
 sudo rpmbuild -ba msttcorefonts-2.5-1.spec &&\
 sudo rpm -ivh /root/rpmbuild/RPMS/noarch/msttcorefonts-2.5-1.noarch.rpm &&\
 cd -
+#+end_src
+
+** Extern Disks
+
+#+begin_src sh
+sudo yum install fuse sshfs
+#+end_src
+
+Careful with /etc/fstab. Last time, I accidentally overwrote it.
+
+#+begin_src sh
+sudo echo "//mafreebox.freebox.fr/Disque\040dur /media/freebox cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab \
+sudo echo "//mafreebox.freebox.fr/LaCie /media/lacie cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab \
+sudo echo "sshfs#dosimont@flutin:/home/traces /home/dosimont/sshfs/flutin_traces fuse port=22,user,noatime,allow_other,_netdev 0 0" >> /etc/fstab \
 #+end_src
