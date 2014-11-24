@@ -37,7 +37,7 @@ sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice
 sudo yum install git gitk gcc gcc-c++ make cmake
 #+end_src
 
-*** R
+*** 
 
 #+begin_src sh
 sudo yum install R
@@ -52,8 +52,8 @@ sudo yum install lttng-tools lttng-ust
 ** Copy wallpapers
 
 #+begin_src sh
-sudo cp ~/Images/wallpaper.jpg /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png \
-sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/wide/heisenbug.png \
+sudo cp ~/Images/wallpaper.jpg /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png &&\
+sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/wide/heisenbug.png &&\
 sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/standard/heisenbug.png
 #+end_src
 
@@ -85,7 +85,7 @@ sudo yum install fuse sshfs
 Careful with /etc/fstab. Last time, I accidentally overwrote it.
 
 #+begin_src sh
-sudo echo "//mafreebox.freebox.fr/Disque\040dur /media/freebox cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab \
-sudo echo "//mafreebox.freebox.fr/LaCie /media/lacie cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab \
-sudo echo "sshfs#dosimont@flutin:/home/traces /home/dosimont/sshfs/flutin_traces fuse port=22,user,noatime,allow_other,_netdev 0 0" >> /etc/fstab \
+sudo echo "//mafreebox.freebox.fr/Disque\040dur /media/freebox cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab &&\
+sudo echo "//mafreebox.freebox.fr/LaCie /media/lacie cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab &&\
+sudo echo "sshfs#dosimont@flutin:/home/traces /home/dosimont/sshfs/flutin_traces fuse port=22,user,noatime,allow_other,_netdev 0 0" >> /etc/fstab &&\
 #+end_src
