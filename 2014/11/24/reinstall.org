@@ -35,8 +35,8 @@ sudo yum install lttng-tools lttng-ust
 ** Copy wallpapers
 
 #+begin_src sh
-sudo cp ~/Images/wallpaper.jpg /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png
-sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/wide/heisenbug.png
+sudo cp ~/Images/wallpaper.jpg /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png &&\
+sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/wide/heisenbug.png &&\
 sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/share/backgrounds/heisenbug/default/standard/heisenbug.png
 #+end_src
 
