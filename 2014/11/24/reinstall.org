@@ -59,6 +59,12 @@ sudo yum install python-matplotlib
 #+end_src
 
 
+*** Lucas' Stuffs
+
+sudo yum install qt-devel boost-devel freeglut-devel asciidoc flex flex-devel bison &&\
+sudo yum groupinstall "Development Tools"
+
+
 ** LTTng
 
 #+begin_src sh
