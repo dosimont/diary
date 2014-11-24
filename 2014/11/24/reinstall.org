@@ -26,7 +26,7 @@ sudo yum install kmod-nvidia xorg-x11-drv-nvidia-libs
 
 #+begin_src sh
 sudo yum update vim-minimal \
-sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice
+sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice wget
 #+end_src
 
 ** Programming stuffs
@@ -79,13 +79,37 @@ cd -
 ** Extern Disks
 
 #+begin_src sh
+sudo cp /etc/fstab /etc/fstab.bak
+#+end_src
+
+#+begin_src sh
 sudo yum install fuse sshfs
 #+end_src
 
 Careful with /etc/fstab. Last time, I accidentally overwrote it.
 
 #+begin_src sh
-sudo echo "//mafreebox.freebox.fr/Disque\040dur /media/freebox cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab &&\
-sudo echo "//mafreebox.freebox.fr/LaCie /media/lacie cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab &&\
-sudo echo "sshfs#dosimont@flutin:/home/traces /home/dosimont/sshfs/flutin_traces fuse port=22,user,noatime,allow_other,_netdev 0 0" >> /etc/fstab &&\
+su -c 'echo "//mafreebox.freebox.fr/Disque\040dur /media/freebox cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab' &&\
+su -c 'echo "//mafreebox.freebox.fr/LaCie /media/lacie cifs _netdev,rw,users,iocharset=utf8,uid=1000,sec=none,file_mode=0777,dir_mode=0777 0 0" >> /etc/fstab' &&\
+su -c 'echo "sshfs#dosimont@flutin:/home/traces /home/dosimont/sshfs/flutin_traces fuse port=22,user,noatime,allow_other,_netdev 0 0" >> /etc/fstab'
+#+end_src
+
+#+begin_src sh
+sudo vim /etc/fuse.conf
+#+end_src
+
+Uncomment the second line
+
+#+begin_src sh
+# mount_max = 1000
+user_allow_other
+#+end_src
+
+#+begin_src sh
+mkdir -p home/dosimont/sshfs/flutin_traces &&\
+sudo mkdir /media/freebox /media/lacie
+#+end_src
+
+#+begin_src sh
+sudo mount -a
 #+end_src
