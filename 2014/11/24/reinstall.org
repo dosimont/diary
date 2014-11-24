@@ -26,7 +26,7 @@ sudo yum install kmod-nvidia xorg-x11-drv-nvidia-libs
 
 #+begin_src sh
 sudo yum update vim-minimal \
-sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice wget
+sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice wget mutt
 #+end_src
 
 ** Programming stuffs
