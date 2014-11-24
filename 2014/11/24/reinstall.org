@@ -26,7 +26,7 @@ sudo yum install kmod-nvidia xorg-x11-drv-nvidia-libs
 
 #+begin_src sh
 sudo yum update vim-minimal \
-sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice wget mutt
+sudo yum install vim gvim gnome-tweak-tool thunderbird libreoffice wget
 #+end_src
 
 ** Programming stuffs
@@ -158,7 +158,11 @@ Install JRE+JDK
 sudo yum install swig
 #+end_src
 
-**Mutt Config
+**Mutt
+
+#+begin_src sh
+sudo yum install mutt
+#+end_src
 
 Edit ~/.muttrc (replace [first] and [last]) as follows:
 
