@@ -1,0 +1,5 @@
+* Add Inria printers
+
+- Open the printer settings
+- Fill the field with print-serv.inrialpes.fr to add printers
+
