@@ -1,13 +1,13 @@
-* Thesis
+# Thesis
 
 TODO List pour ma thèse
 
-** Général
+## Général
 
-  [ ] Evoquer la différence entre notre technique d'agrégation et le clustering
+- [ ] Evoquer la différence entre notre technique d'agrégation et le clustering
 
-** Chapitres
+## Chapitres
 
-*** Chapitre 6
+### Chapitre 6
 
-  [ ] Figures avec les agrégats interdits
+- [ ] Figures avec les agrégats interdits
