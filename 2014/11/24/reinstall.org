@@ -113,6 +113,12 @@ sudo rpm -ivh /root/rpmbuild/RPMS/noarch/msttcorefonts-2.5-1.noarch.rpm &&\
 cd -
 #+end_src
 
+** Dictionnaries
+
+#+begin_src sh
+sudo yum install hunspell hunspell-fr hunspell-en
+#+end_src
+
 ** Extern Disks
 
 #+begin_src sh
