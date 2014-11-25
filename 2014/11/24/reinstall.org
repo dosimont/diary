@@ -158,7 +158,7 @@ Install JRE+JDK
 sudo yum install swig
 #+end_src
 
-**Mutt
+** Mutt
 
 #+begin_src sh
 sudo yum install mutt
@@ -166,7 +166,7 @@ sudo yum install mutt
 
 Edit ~/.muttrc (replace [first] and [last]) as follows:
 
-#+begin_src
+#+begin_src sh
 set my_tmp=`gpg -o ~/.secret/.tmp -d ~/.secret/.passwd.gpg`
 set my_pass=`awk '/Google:/ {print $2}' ~/.secret/.tmp`
 set my_del=`rm -f ~/.secret/.tmp`
