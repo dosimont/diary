@@ -89,6 +89,19 @@ sudo cp /usr/share/backgrounds/heisenbug/default/normalish/heisenbug.png /usr/sh
 sudo yum install kile
 #+end_src
 
+*** Packages I frequently use
+
+#+begin_src sh
+sudo yum install texlive-babel-french \
+texlive-algorithmic* \
+texlive-multirow \
+texlive-nomencl \
+texlive-emptypage \
+texlive-fncychap \
+texlive-framed \
+texlive-ntheorem \
+#+end_src
+
 *** Install Arial font
 
 #+begin_src sh
