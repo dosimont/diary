@@ -1,0 +1,3 @@
+* Thesis TODO List
+
+- [] Evoquer la différence entre notre technique d'agrégation et le clustering
