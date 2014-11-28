@@ -1,0 +1,24 @@
+* Add a new user
+
+Each time I have to do this operation, I forget the exact procedure.
+Here, a reminder
+
+** Add user
+
+#+begin_src sh
+su 
+adduser [user]
+passwd [user]
+#+end_src
+
+** Add user to the wheel group (sudo)
+
+Some links with explanations:
+
+[http://linuxpoison.blogspot.fr/2008/12/configuring-sudo-and-adding-users-to.html]
+[http://www.centos.org/docs/5/html/5.1/Deployment_Guide/s3-wstation-privileges-limitroot-su.html]
+
+#+begin_src sh
+sudo usermod -G wheel [user]
+#+end_src
+
