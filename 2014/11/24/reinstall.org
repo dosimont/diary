@@ -158,6 +158,25 @@ sudo mkdir /media/freebox /media/lacie
 sudo mount -a
 #+end_src
 
+** Multimedia
+
+*** GStreamer
+
+#+begin_src sh
+sudo yum install gstreamer-ffmpeg \
+gstreamer-plugins-bad \
+gstreamer-plugins-ugly \
+gstreamer1-libav \
+gstreamer1-plugins-bad \
+gstreamer1-plugins-ugly
+#+end_src
+
+*** VLC
+
+#+begin_src sh
+sudo yum install vlc
+#+end_src
+
 ** Images
 
 #+begin_src sh
