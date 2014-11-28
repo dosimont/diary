@@ -59,13 +59,19 @@ git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/dosimont_thesis.
 
 ** List of Presentations
 
+- *Séminaire MOAIS 2014*, November 2014 (Les Trolles)
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/slides/seminary_moais_2014.git 
+#+end_src
+
 - *Journée Visu 2014*, November 2014 (Paris)
 
 #+begin_src sh
 git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/slides/visu2014.git 
 #+end_src
 
-- *BSC 3 days meeting*, October 2014 (Barcelone)
+- *BSC 3 days meeting*, October 2014 (Barcelona)
 
 #+begin_src sh
 git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/slides/bsc2014.git 
