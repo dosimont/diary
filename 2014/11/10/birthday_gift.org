@@ -59,6 +59,12 @@ git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/dosimont_thesis.
 
 ** List of Presentations
 
+- *SoC-Trace SET 2.0 Meeting*, December 2014 (Inria Grenoble)
+
+#+begin_src sh
+git clone git+ssh://[user]@scm.gforge.inria.fr//gitroot/ocelotl/slides/soctrace_20141209.git
+#+end_src
+
 - *Séminaire MOAIS 2014*, November 2014 (Les Trolles)
 
 #+begin_src sh
