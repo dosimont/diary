@@ -27,9 +27,11 @@ TODO List pour ma thèse
       - ondemand
       - conservative
       - powersave
-  traçage avec LTTng, puis analyse avec agrégation temporelle
+      
+  traçage avec LTTng
 - [ ] Lecture d'une vidéo à partir d'une set top box
       - sans activité sur le réseau
       - avec forte activité sur le réseau mais pas sur le disque (scp d'un gros volume de données depuis un autre PC sur le même réseau)
       - avec forte activité sur le disque (lecture simultannée d'autres vidéos depuis un autre poste)
+      
   traçage avec LTTng
