@@ -22,16 +22,14 @@ TODO List pour ma thèse
 
 ### Analyse temporelle
 
+En utilisant LTTng pour tracer. Utiliser éventuellement LTTng Eclipse viewer pour comparaisons
+
 - [ ] Lecture d'une vidéo avec fréquence du processeur différente :
       - performance
       - ondemand
       - conservative
       - powersave
-      
-  traçage avec LTTng
 - [ ] Lecture d'une vidéo à partir d'une set top box
       - sans activité sur le réseau
       - avec forte activité sur le réseau mais pas sur le disque (scp d'un gros volume de données depuis un autre PC sur le même réseau)
       - avec forte activité sur le disque (lecture simultannée d'autres vidéos depuis un autre poste)
-      
-  traçage avec LTTng
