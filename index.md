@@ -2,7 +2,7 @@
 
 ## 2014
 
-- [2014/11/3/barcelona.org](BSC Meeting Summary)
+- [BSC Meeting Summary](2014/11/3/barcelona.org)
 
-- [https://github.com/dosimont/diary/blob/master/2014/11/10/birthday_gift.org](List of publications and presentations)
+- [List of publications and presentations](https://github.com/dosimont/diary/blob/master/2014/11/10/birthday_gift.org)
 
