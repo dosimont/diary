@@ -24,6 +24,7 @@ TODO List pour ma thèse
 ### Analyse temporelle
 
 En utilisant LTTng pour tracer. Utiliser éventuellement LTTng Eclipse viewer pour comparaisons
+_Edit : il est peut-être préférable d'utiliser GStreamer._
 
 - [ ] Lecture d'une vidéo avec fréquence du processeur différente :
       - performance
@@ -34,3 +35,8 @@ En utilisant LTTng pour tracer. Utiliser éventuellement LTTng Eclipse viewer po
       - sans activité sur le réseau
       - avec forte activité sur le réseau mais pas sur le disque (scp d'un gros volume de données depuis un autre PC sur le même réseau)
       - avec forte activité sur le disque (lecture simultannée d'autres vidéos depuis un autre poste)
+
+### Influence des queries
+
+Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces,
+différents
