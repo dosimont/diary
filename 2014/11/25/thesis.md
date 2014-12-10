@@ -24,6 +24,7 @@ TODO List pour ma thèse
 ### Analyse temporelle
 
 En utilisant LTTng pour tracer. Utiliser éventuellement LTTng Eclipse viewer pour comparaisons
+
 _Edit : il est peut-être préférable d'utiliser GStreamer._
 
 - [ ] Lecture d'une vidéo avec fréquence du processeur différente :
@@ -38,5 +39,13 @@ _Edit : il est peut-être préférable d'utiliser GStreamer._
 
 ### Influence des queries
 
-Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces,
-différents
+Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces (jusqu'à 3 milliards -1 events, soit environ 100 Go), différents nombre de TS, et différentes optimisations des queries: 
+
+- full optimization (query "*")
+- time optimization
+- event producers optimization
+- event types optimization
+- time + event producers optimization
+- time + event types optimization
+- event producers + event types optimization
+- no optimization
