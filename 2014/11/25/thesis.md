@@ -39,7 +39,7 @@ _Edit : il est peut-être préférable d'utiliser GStreamer._
 
 ### Influence des queries
 
-Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces (jusqu'à 3 milliards -1 events, soit environ 100 Go), différents nombres de TS, et différentes optimisations des queries: 
+- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces (jusqu'à 3 milliards -1 events, soit environ 100 Go), différents nombres de TS, et différentes optimisations des queries: 
 
 - full optimization (query "*")
 - time optimization
