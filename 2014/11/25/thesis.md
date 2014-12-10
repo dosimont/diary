@@ -10,6 +10,7 @@ TODO List pour ma thèse
 - [ ] Evoquer la différence entre notre technique d'agrégation et le clustering
 - [ ] Attention aux références manquantes [??]
 - [ ] Attention aux titres trop longs : proposer une version courte pour le haut de page
+- [ ] Cohérence des notations temporelles : commencer à 0 et non à 1
 
 ## Chapitres
 
