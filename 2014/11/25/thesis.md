@@ -37,6 +37,16 @@ _Edit : il est peut-être préférable d'utiliser GStreamer._
       - avec forte activité sur le réseau mais pas sur le disque (scp d'un gros volume de données depuis un autre PC sur le même réseau)
       - avec forte activité sur le disque (lecture simultannée d'autres vidéos depuis un autre poste)
 
+### Traces synthétiques
+
+- [ ] Générer les traces suivantes :
+10000 EP feuilles, 5 niveaux hiérarchiques équitablement répartis (root, 10 fils, 10 fils chacun, 10 fils chacun, 10 fils feuilles chacun)
+10 ET
+Pas de trou, trace parallèle: chaque feuille est, à un instant t, dans un et un seul état particulier.
+Distribution homogène des durées : entre 1 (le minimum) et (valeur temps max)/(nombre d'évènements)
+où la valeur temps max est définie par le type du temps (int, long, etc).
+Tailles de traces: 1Mevent, 10Mevent, 100Mevent, 1Gevent, 2Gevent, max Gevent
+
 ### Influence des queries
 
 - [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces (jusqu'au max possible), différents nombres de TS(10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries: 
