@@ -49,9 +49,9 @@ où la valeur temps max est définie par le type du temps (int, long, etc).
 
 ### Influence des queries
 
-- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces (jusqu'au max possible), différents nombres de TS(10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries: 
+- [ ] Effectuer un test exhaustif de temps de lecture (trace entière) + reconstruction du modèle micro avec différentes tailles de traces (jusqu'au max possible), différents nombres de TS (10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries: 
 
-- full optimization (query "*")
+- full optimization
 - time optimization only
 - event producers optimization only
 - event types optimization only
