@@ -49,13 +49,13 @@ où la valeur temps max est définie par le type du temps (int, long, etc).
 
 ### Influence des queries
 
-- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces (jusqu'au max possible), différents nombres de TS(10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries: 
+- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS(10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries: 
 
-- full optimization
-- time optimization only
-- event producers optimization only
-- event types optimization only
-- time + event producers optimization
-- time + event types optimization
-- event producers + event types optimization
-- no optimization
+- full optimization (OPT)
+- time optimization only (TIME)
+- event producers optimization only (EP)
+- event types optimization only (ET)
+- time + event producers optimization (TEP)
+- time + event types optimization (TET)
+- event producers + event types optimization (EPET)
+- no optimization (NOPT)
