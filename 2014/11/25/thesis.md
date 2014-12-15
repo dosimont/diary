@@ -49,7 +49,7 @@ où la valeur temps max est définie par le type du temps (int, long, etc).
 
 ### Influence des queries
 
-- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries : 
+- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query, et différentes optimisations des queries QUERY: 
 
 - full optimization (OPT)
 - time optimization only (T)
@@ -59,13 +59,20 @@ où la valeur temps max est définie par le type du temps (int, long, etc).
 - time + event types optimization (TET)
 - event producers + event types optimization (EPET)
 - no optimization (NOPT)
-- 
+ 
+Header:
+"TRACE", "PRODUCERS", "LEAVES", "START", "END", "EVENTS", "TRACESIZE", "TS", "QUERY", "MICROMODEL"
+
+
 ### Influence du cache
 
-- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à 2000), 4 threads et 100000 events per query et différentes poliiques de cache :
+- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query et différentes politiques de cache DATACACHE :
 
 - NOCACHE
 - OPTIMALCACHE
 - APPROX
+ 
+Header:
+"TRACE", "PRODUCERS", "LEAVES", "START", "END", "EVENTS", "TRACESIZE", "TS", "DATACACHE", "MICROMODEL"
 
 Nous ne traiterons pas la reconstruction à query partielle
