@@ -39,7 +39,7 @@ _Edit : il est peut-être préférable d'utiliser GStreamer._
 
 ### Traces synthétiques
 
-- [ ] Générer les traces suivantes :
+- [ ] Générer les traces suivantes (elles ne contiennent que des states):
 - 10000 EP feuilles, 5 niveaux hiérarchiques équitablement répartis (root, 10 fils, 10 fils chacun, 10 fils chacun, 10 fils feuilles chacun)
 - 10 ET
 - Pas de trou, trace parallèle: chaque feuille est, à un instant t, dans un et un seul état particulier.
@@ -49,7 +49,7 @@ où la valeur temps max est définie par le type du temps (int, long, etc).
 
 ### Influence des queries
 
-- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query, et différentes optimisations des queries QUERY: 
+- [ ] Effectuer un test exhaustif (métrique : states) de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query, et différentes optimisations des queries QUERY: 
 - full optimization (OPT)
 - time optimization only (T)
 - event producers optimization only (EP)
@@ -65,7 +65,7 @@ Header:
 
 ### Influence du cache
 
-- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query et différentes politiques de cache DATACACHE :
+- [ ] Effectuer un test exhaustif  (métrique : states) de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query et différentes politiques de cache DATACACHE :
 - NOCACHE
 - OPTIMAL
 - APPROX
