@@ -50,7 +50,6 @@ où la valeur temps max est définie par le type du temps (int, long, etc).
 ### Influence des queries
 
 - [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query, et différentes optimisations des queries QUERY: 
-
 - full optimization (OPT)
 - time optimization only (T)
 - event producers optimization only (EP)
@@ -67,7 +66,6 @@ Header:
 ### Influence du cache
 
 - [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query et différentes politiques de cache DATACACHE :
-
 - NOCACHE
 - OPTIMALCACHE
 - APPROX
