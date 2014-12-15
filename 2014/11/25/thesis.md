@@ -45,17 +45,27 @@ _Edit : il est peut-être préférable d'utiliser GStreamer._
 - Pas de trou, trace parallèle: chaque feuille est, à un instant t, dans un et un seul état particulier.
 - Distribution homogène des durées : entre 1 (le minimum) et (valeur temps max)/(nombre d'évènements)
 où la valeur temps max est définie par le type du temps (int, long, etc).
-- Tailles de traces: 1Mevent, 10Mevent, 100Mevent, 1Gevent, 2Gevent, max Gevent
+- Tailles de traces : 1Mevent, 10Mevent, 100Mevent, 1Gevent, 2Gevent, max Gevent
 
 ### Influence des queries
 
-- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS(10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries: 
+- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à 2000), 4 threads et 100000 events per query, et différentes optimisations des queries : 
 
 - full optimization (OPT)
-- time optimization only (TIME)
+- time optimization only (T)
 - event producers optimization only (EP)
 - event types optimization only (ET)
 - time + event producers optimization (TEP)
 - time + event types optimization (TET)
 - event producers + event types optimization (EPET)
 - no optimization (NOPT)
+- 
+### Influence du cache
+
+- [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à 2000), 4 threads et 100000 events per query et différentes poliiques de cache :
+
+- NOCACHE
+- OPTIMALCACHE
+- APPROX
+
+Nous ne traiterons pas la reconstruction à query partielle
