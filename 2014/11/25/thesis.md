@@ -67,7 +67,7 @@ Header:
 
 - [ ] Effectuer un test exhaustif de temps de lecture + reconstruction du modèle micro avec différentes tailles de traces, différents nombres de TS (10 à x000), 4 threads et 100000 events per query et différentes politiques de cache DATACACHE :
 - NOCACHE
-- OPTIMALCACHE
+- OPTIMAL
 - APPROX
  
 Header:
