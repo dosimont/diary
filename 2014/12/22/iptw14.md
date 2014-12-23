@@ -18,7 +18,7 @@
 
 - [X] 2nd paragraph: first appearance of acronym "pIC", should be followed directly by acronym explanation (parametrized Information Criterion) - not several lines later in the formula.
 - [X] p.6 between Eq. (2) and Eq. (3) 'and a defines ...' -> 'and define a ...'
-- [ ] Fig. 2-6: color legend missing
+- [X] Fig. 2-6: color legend missing
 
 ### Subsection 3.5.1
 
