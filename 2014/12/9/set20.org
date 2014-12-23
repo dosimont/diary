@@ -1,0 +1,32 @@
+* SoC-Trace Meeting
+
+** Intro
+
+** Christiane
+
+- Christiane is not here. What about TED?
+- Should be rewriten it in Java
+- DRO gave her some lessons about software architecture
+- Serge is now involved in TED, and is responsible of its integration in Fs
+- However, he's moving at Rennes
+- Only 3 months to implement TED... seems to be short
+
+** Dro
+
+- Presentation
+
+*** Discussion with Jerome
+
+He can generate traces, but not those with the bugs, because he does not have the environment to do that.
+
+** Fabrice
+
+Ontology?
+
+** Jérôme
+
+** Gene
+
+** Conclusion
+
+
