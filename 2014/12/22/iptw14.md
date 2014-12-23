@@ -11,8 +11,8 @@
 
 ### Subsection 3.1
 
-- [ ] 3rd paragraph (p.5) is unclear: How are data partitioned, based on time, hardware resources, similarity of metric values?
-- [ ] p.6 enumeration of partitioning steps: step 3: what would be not allowed partitions?
+- [X] 3rd paragraph (p.5) is unclear: How are data partitioned, based on time, hardware resources, similarity of metric values? _it is explained further_
+- [X] p.6 enumeration of partitioning steps: step 3: what would be not allowed partitions? _example given_
 
 ### Subsection 3.2
 
@@ -22,12 +22,12 @@
 
 ### Subsection 3.5.1
 
-- [ ] Add a bit info how the aggregation is done - first time than space or both at same time.
+- [X] Add a bit info how the aggregation is done - first time than space or both at same time.
 
 ### Subsection 3.5.2
 
 - [X] before Eq.1 superflous white space: '... followed :' --> '... followed:'
-- [ ] A bit info about the selection of aggregation sets could be added, because it is clear, that the number of possible aggregations is binomially high.
+- [X] A bit info about the selection of aggregation sets could be added, because it is clear, that the number of possible aggregations is binomially high.
 
 ## Section 4
 
