@@ -2,7 +2,7 @@
 
 ## Main page
 
-- [ ] provided wrong e-mail: 'first.last@imag.fr'?!
+- [X] provided wrong e-mail: 'first.last@imag.fr'?!
 
 ## Intro 
 - [ ] Better resoliution for Fig. 1
