@@ -43,7 +43,7 @@
 
 ## Subsection 4.1.3
 
-- [ ] example Fig for the mentioned Gantt chart-like diagram?
+- [X] example Fig for the mentioned Gantt chart-like diagram?
 
 ## Subsection 4.2
 
