@@ -34,7 +34,7 @@
 ## Subsection 4.1.1
 
 - [X] 2nd paragraph (p.13): 'The Figure 7 ...' --> 'A screenshot of the GUI is shown in Figure 7.'
-- [ ] Better resolution for Fig. 7 
+- [X] Better resolution for Fig. 7 
 
 ## Subsection 4.1.2
 
