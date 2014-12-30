@@ -82,6 +82,8 @@ TODO
 
 ### Conclusion
 
+TODO
+
 ## XP
 
 ### Analyse temporelle
