@@ -37,6 +37,11 @@ TODO
 
 ### Chapitre 6
 
+- [ ] Intro
+- [ ] Figures Appli multimedia
+- [ ] Description Appli calcul parallèle
+- [ ] Algo complet (Annexe?)
+- [ ] Mode
 - [ ] Citations
 - [ ] Use cases
 - [ ] Bilan
@@ -44,15 +49,19 @@ TODO
 
 ### Chapitre 7
 
+- [ ] Intro
+- [ ] Intro des sous-parties
 - [ ] Citations
 - [ ] Critères multidimensionnels (garder ici ou déplacer)
 - [ ] Figures avec les agrégats interdits
+- [ ] Comparaison avec d'autres types d'agrégations (rédiger)
 - [ ] Use cases
 - [ ] Bilan
 - [ ] Future work 
 
 ### Chapitre 8
 
+- [ ] Intro
 - [ ] Citations
 - [ ] Citer github (Ocelotl et LPAggreg)
 - [ ] Expliquer bouton HOME
