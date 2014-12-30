@@ -14,10 +14,64 @@ TODO List pour ma thèse
 
 ## Chapitres
 
+### Résumé
+TODO
+
+### Abstract
+TODO
+
+### Chapitre 1 - Intro
+TODO
+
+### Chapitre 2
+TODO
+
+### Chapitre 3
+TODO
+
+### Chapitre 4
+TODO
+
+### Chapitre 5
+TODO
+
 ### Chapitre 6
 
-- [ ] Figures avec les agrégats interdits
+- [ ] Citations
+- [ ] Use cases
+- [ ] Bilan
+- [ ] Future work
 
+### Chapitre 7
+
+- [ ] Citations
+- [ ] Critères multidimensionnels (garder ici ou déplacer)
+- [ ] Figures avec les agrégats interdits
+- [ ] Use cases
+- [ ] Bilan
+- [ ] Future work 
+
+### Chapitre 8
+
+- [ ] Citations
+- [ ] Citer github (Ocelotl et LPAggreg)
+- [ ] Expliquer bouton HOME
+- [ ] Figure des composants
+- [ ] Figure switch Gantt chart
+- [ ] Figure stats
+- [ ] Figure click for more details
+- [ ] évoquer le problème général et les axes de recherche d'optimisation générique des queries
+- [ ] Perf queries
+- [ ] Perf cache
+- [ ] Exemple de réduction de taille de trace
+- [ ] Compléter calcul dicho agrégation temporelle
+- [ ] Limites de l'outil
+- [ ] Proportion des temps des étapes de l'analyse
+- [ ] Comparaison use cases cache approximé et modèle micro parfait
+- [ ] Bilan
+- [ ] Future work
+
+### Conclusion
 
 ## XP
 
