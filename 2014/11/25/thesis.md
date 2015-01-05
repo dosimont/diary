@@ -127,7 +127,7 @@ où la valeur temps max est définie par le type du temps (int, long, etc).
 Header:
 "TRACE", "PRODUCERS", "LEAVES", "START", "END", "EVENTS", "TRACESIZE", "TS", "QUERY", "MICROMODEL"
 
-_Edit: ajouter des points dans la courbe : traces de 500 Mo, 1.5 Go, et, si possible, 250 Mo, 750 Mo, 1.25 Go, 1.75 Go_
+_Edit: ajouter des points dans la courbe : traces de 500 ME, 1.5 GE, et, si possible, 250 ME, 750 ME, 1.25 GE, 1.75 GE_
 
 ### Influence du cache
 
