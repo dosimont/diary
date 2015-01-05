@@ -5,7 +5,7 @@
 - [X] provided wrong e-mail: 'first.last@imag.fr'?!
 
 ## Intro 
-- [ ] Better resoliution for Fig. 1 _Regenerate using SET 1.0_
+- [ ] Better resoliution for Fig. 1
 
 ## Section 3
 
