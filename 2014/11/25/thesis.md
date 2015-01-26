@@ -41,6 +41,7 @@ TODO
 - [ ] Figures Appli multimedia
 - [ ] Description Appli calcul parallèle
 - [ ] Algo complet (Annexe?)
+- [ ] Vérifier le calcul des qualités
 - [ ] Mode
 - [ ] Citations
 - [ ] Use cases
@@ -55,6 +56,7 @@ TODO
 - [ ] Critères multidimensionnels (garder ici ou déplacer)
 - [ ] Figures avec les agrégats interdits
 - [ ] Comparaison avec d'autres types d'agrégations (rédiger)
+- [ ] Vérifier le calcul des qualités
 - [ ] Use cases
 - [ ] Bilan
 - [ ] Future work 
