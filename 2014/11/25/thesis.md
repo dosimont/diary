@@ -10,6 +10,7 @@ TODO List pour ma thèse
 - [ ] Attention aux références manquantes [??]
 - [ ] Attention aux titres trop longs : proposer une version courte pour le haut de page
 - [ ] Cohérence des notations temporelles : commencer à 0 et non à 1
+- [ ] Meilleures découpes/ meilleures qualités (=dicho)
 
 #### Liste de fautes courantes
 
