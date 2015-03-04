@@ -7,7 +7,6 @@ TODO List pour ma thèse
 - [ ] Vérifier l'emploi de \K et \KE
 - [ ] Vérifier l'emploi de \in et \subset, y compris dans les \sum et \max
 - [ ] Vérifier l'emploi des opérateurs mathématiques, éviter les chaînes de caractères dans les formules mathématiques
-- [ ] Evoquer la différence entre notre technique d'agrégation et le clustering
 - [ ] Attention aux références manquantes [??]
 - [ ] Attention aux titres trop longs : proposer une version courte pour le haut de page
 - [ ] Cohérence des notations temporelles : commencer à 0 et non à 1
@@ -21,66 +20,23 @@ TODO
 TODO
 
 ### Chapitre 1 - Intro
-TODO
 
 ### Chapitre 2
-TODO
 
 ### Chapitre 3
-TODO
 
 ### Chapitre 4
-TODO
 
 ### Chapitre 5
-TODO
+
+- [ ] Améliorer les formules du calcul des qualités pour les rendre plus génériques et pour aider la compréhension de l'algo
+- [ ] Modifier les couleurs de la Fig.5.8 pour le N&B
 
 ### Chapitre 6
 
-- [ ] Intro
-- [ ] Figures Appli multimedia
-- [ ] Description Appli calcul parallèle
-- [ ] Algo complet (Annexe?)
-- [ ] Vérifier le calcul des qualités
-- [ ] Mode
-- [ ] Citations
-- [ ] Use cases
-- [ ] Bilan
-- [ ] Future work
-
 ### Chapitre 7
 
-- [ ] Intro
-- [ ] Intro des sous-parties
-- [ ] Citations
-- [ ] Critères multidimensionnels (garder ici ou déplacer)
-- [ ] Figures avec les agrégats interdits
-- [ ] Comparaison avec d'autres types d'agrégations (rédiger)
-- [ ] Vérifier le calcul des qualités
-- [ ] Use cases
-- [ ] Bilan
-- [ ] Future work 
-
 ### Chapitre 8
-
-- [ ] Intro
-- [ ] Citations
-- [ ] Citer github (Ocelotl et LPAggreg)
-- [ ] Expliquer bouton HOME
-- [ ] Figure des composants
-- [ ] Figure switch Gantt chart
-- [ ] Figure stats
-- [ ] Figure click for more details
-- [ ] évoquer le problème général et les axes de recherche d'optimisation générique des queries
-- [ ] Perf queries
-- [ ] Perf cache
-- [ ] Exemple de réduction de taille de trace
-- [ ] Compléter calcul dicho agrégation temporelle
-- [ ] Limites de l'outil
-- [ ] Proportion des temps des étapes de l'analyse
-- [ ] Comparaison use cases cache approximé et modèle micro parfait
-- [ ] Bilan
-- [ ] Future work
 
 ### Conclusion
 
