@@ -11,6 +11,11 @@ TODO List pour ma thèse
 - [ ] Attention aux titres trop longs : proposer une version courte pour le haut de page
 - [ ] Cohérence des notations temporelles : commencer à 0 et non à 1
 
+#### Liste de fautes courantes
+
+- [ ] en détail plutôt que en détails
+
+
 ## Chapitres
 
 ### Résumé
