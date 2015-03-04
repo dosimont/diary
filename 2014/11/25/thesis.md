@@ -36,6 +36,7 @@ TODO
 
 - [ ] Améliorer les formules du calcul des qualités pour les rendre plus génériques et pour aider la compréhension de l'algo
 - [ ] Modifier les couleurs de la Fig.5.8 pour le N&B
+- [ ] Guillaume : Contenu des vidéos pertinents?
 
 ### Chapitre 6
 
