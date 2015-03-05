@@ -38,12 +38,14 @@ TODO
 - [ ] Améliorer les formules du calcul des qualités pour les rendre plus génériques et pour aider la compréhension de l'algo
 - [ ] Modifier les couleurs de la Fig.5.8 pour le N&B
 - [ ] Guillaume : Contenu des vidéos pertinents?
+- [ ] Couleur des figures en gal?
+- [ ] Schéma de la topology et interconnects de Gre, Ren, et Nan?
 
 ### Chapitre 6
 
 ### Chapitre 7
 
-### Chapitre 8
+- [ ] Schéma de l'architecture d'Otl?
 
 ### Conclusion
 
