@@ -15,6 +15,7 @@ TODO List pour ma thèse
 #### Liste de fautes courantes
 
 - [ ] en détail plutôt que en détails
+- [ ] coupe plutôt que découpe
 
 
 ## Chapitres
