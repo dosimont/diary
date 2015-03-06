@@ -16,6 +16,7 @@ TODO List pour ma thèse
 
 - [ ] en détail plutôt que en détails
 - [ ] coupe plutôt que découpe
+- [ ] partitions optimales = dicho ; meilleures coupes = partition
 
 
 ## Chapitres
