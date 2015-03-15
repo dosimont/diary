@@ -48,6 +48,7 @@ TODO
 ### Chapitre 7
 
 - [ ] Schéma de l'architecture d'Otl?
+- [ ] Complexité en pratique, T et ST : montremontremontre!
 
 ### Conclusion
 
