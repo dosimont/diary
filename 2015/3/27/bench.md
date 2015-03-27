@@ -16,9 +16,7 @@ There are two parameters that are tested:
 		- 100
 		- 1000
 		- 5000
-		- 7000
 		- 10000
-		- 12000
 		- 15000
 		- 20000
 		- 50000
