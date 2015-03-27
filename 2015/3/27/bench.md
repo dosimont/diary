@@ -6,14 +6,22 @@ There are two parameters that are tested:
 
 	- The number of thread loading events (and performing the filtering)
 	
+		- 2
 		- 4
 		- 8
 		- 16
+		
 	- The number of events fetched by a thread at each iteration
 	
 		- 100
 		- 1000
+		- 5000
+		- 7000
 		- 10000
+		- 12000
+		- 15000
+		- 20000
+		- 50000
 		- 100000
 
 ##Traces
@@ -26,13 +34,20 @@ Synthetic traces with temporal indexation. All traces have 100 EP and 10 ET. The
 	- 2^31 (~2140000000).
 Events are in average distributed in a uniform fashion over all the dimensions: spatial, temporal and their type. So when filtering one or several dimensions it is possible to know how many events we loaded.
 
+Real traces :
+	- TS Record Small
+	- GST D) 
+	- Nancy CG 64 C
+	- Nancy CG 512 C
+	- Nancy LU 700 C
+	- Grenoble LU 700 C
+
 ##Filtering
 ### Temporal (T)
 	- No filtering
 	- 10% of total time
-	- 25%
+	- 20%
 	- 50%
-	- 66%
 	- 90%
 	
 ### Spatial (S)
@@ -40,15 +55,13 @@ Events are in average distributed in a uniform fashion over all the dimensions: 
 	- 1/10
 	- 2/10
 	- 5/10
-	- 7/10
 	- 9/10
 	
 ### Event Type (ET)
 	- No filtering
 	- 10% ef event types
-	- 25% of event types
+	- 20% of event types
 	- 50% 
-	- 66%
 	- 90%
 	
 Then we perform the tests with all the combination of the above filters:
