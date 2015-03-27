@@ -23,7 +23,7 @@ There are two parameters that are tested:
 		- 100000
 
 ##Traces
-Synthetic traces with temporal indexation. All traces have 100 EP and 10 ET. The trace have different number of events: 
+Synthetic traces with temporal indexation. All traces have 1000 EP and 10 ET. The trace have different number of events: 
 
 	- 1000000
 	- 10000000
