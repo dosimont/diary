@@ -27,14 +27,15 @@ There are two parameters that are tested:
 ##Traces
 Synthetic traces with temporal indexation. All traces have 100 EP and 10 ET. The trace have different number of events: 
 
-	- 1000000, 
-	- 10000000,
-	- 100000000,
-	- 1000000000,
-	- 2^31 (~2140000000).
+	- 1000000
+	- 10000000
+	- 100000000
+	- 1000000000
+	- 2^31 (~2140000000)
 Events are in average distributed in a uniform fashion over all the dimensions: spatial, temporal and their type. So when filtering one or several dimensions it is possible to know how many events we loaded.
 
 Real traces :
+
 	- TS Record Small
 	- GST D) 
 	- Nancy CG 64 C
