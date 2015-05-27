@@ -4,4 +4,5 @@
 - [ ] Revoir les slides du début embedded-parallel
 - [ ] Slide qui explique pourquoi on trace
 - [ ] Quantifier les problèmes liés à l'analyse de la vidéo (taille de trace) voir slide scalability
-- [ ] Structure appli embedded
+- [ ] Structure appli embedded : supprimer
+- [ ] Virer : polynomial 
