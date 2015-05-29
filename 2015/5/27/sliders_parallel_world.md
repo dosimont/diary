@@ -18,9 +18,10 @@
 - [ ] Virer algo, remplacer par plus simple
 - [ ] Algo ST en récursif 
 - [ ] Garder mêmes conventions
-- [ ] Slides sur trace début temporel
+- [X] Slides sur trace début temporel
 - [ ] Retrvavailler matrice éclatée
-- [ ] Other metrics? Pas le peine
+- [ ] Retravailler couleurs matrices
+- [X] Other metrics? Pas le peine
 - [ ] Slide complet sur query
 - [ ] SLide query sur cache
 - [ ] Conclusion
