@@ -15,15 +15,15 @@
 - [X] Virer complexity, merger avec complexity reduction
 - [X] Virer BPP
 - [X] Notations juste avant formules
-- [ ] Virer algo, remplacer par plus simple
-- [ ] Algo ST en récursif 
-- [ ] Garder mêmes conventions
+- [X] Virer algo, remplacer par plus simple
+- [X] Algo ST en récursif 
+- [X] Garder mêmes conventions
 - [X] Slides sur trace début temporel
 - [ ] Retrvavailler matrice éclatée
 - [ ] Retravailler couleurs matrices
 - [X] Other metrics? Pas le peine
-- [ ] Slide complet sur query
-- [ ] SLide query sur cache
+- [X] Slide complet sur query
+- [X] SLide query sur cache
 - [ ] Conclusion
 - [ ] Thanks
 - [ ] Rounded faces
