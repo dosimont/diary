@@ -28,8 +28,8 @@
 - [ ] Thanks
 - [ ] Rounded faces
 - [ ] TS Record
-- [ ] CG
-- [ ] LU
+- [X] CG
+- [X] LU
 - [ ] Proposal
 
 
